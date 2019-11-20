@@ -1,0 +1,603 @@
+<style type="text/css">
+    .prl-5 {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    ol {
+        list-style-type: decimal;
+    }
+
+    ul.d {
+        list-style-type: lower-alpha;
+    }
+
+    .prl-10 {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .no-padding {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .col-sm-4 {
+        width: 33.33333333%;
+        float: left;
+    }
+
+    .col-sm-2 {
+        width: 16.66666667%;
+        float: left;
+    }
+
+    .col-sm-6 {
+        width: 50%;
+        float: left;
+    }
+
+    .col-sm-3 {
+        width: 25%;
+        float: left;
+    }
+
+    .col-10 {
+        width: 10%;
+        position: relative;
+        float: left;
+    }
+
+    .img {
+        width: 100%;
+        height: auto;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    a>.img:hover {
+        opacity: 0.65;
+    }
+
+    #info-cicilan-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background: #e5e5e5;
+        color: #444444 !important;
+        padding: 10px 0;
+        font-size: 1.1em;
+        cursor: pointer;
+    }
+
+    #info-cicilan-box {
+        display: none;
+    }
+
+    #info-cicilan-box {
+        padding: 30px 40px;
+        background: #fbfbfb;
+        border: 1px solid #e4e4e4;
+    }
+
+    ul li {
+        font-style: normal;
+        font-weight: normal;
+    }
+
+    #info-cicilan-box ul li ul li {
+        list-style: circle;
+    }
+
+    .promo-title {
+        margin-top: 16px;
+        margin-bottom: 8px;
+        text-align: center;
+        font-weight: bold;
+        color: #000000 !important;
+    }
+
+    .no-margin {
+        margin: 0;
+    }
+
+    .no-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .mt-10 {
+        margin-top: 10px;
+    }
+
+    .mb-10 {
+        margin-bottom: 10px;
+    }
+
+    .carousel-control {
+        top: 45% !important;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    table tr th {
+        text-align: center;
+    }
+
+    table tr th,
+    table tr td {
+        padding: 5px;
+    }
+
+
+
+
+    .carousel-control {
+        top: 45% !important;
+    }
+
+
+    .grid-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .grid-container >div{
+
+    }
+
+
+    @media (min-width: 768px) {
+
+        .carousel-control .glyphicon-chevron-left,
+        .carousel-control .glyphicon-chevron-right,
+        .carousel-control .icon-prev,
+        .carousel-control .icon-next {
+            margin-top: -15px !important;
+        }
+
+        .carousel-control .glyphicon-chevron-left,
+        .carousel-control .icon-prev {
+            margin-left: -15px !important;
+        }
+
+        .carousel-control .glyphicon-chevron-right,
+        .carousel-control .icon-next {
+            margin-right: -15px !important;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .col-sm-4 {
+            width: 33.33333333%;
+            float: left;
+        }
+    }
+</style>
+
+<style>
+        .no-margin {
+              margin: 0px;
+        }
+  
+        .mb-10 {
+              margin-bottom: 10px;
+        }
+  
+        .img {
+              width: 100%;
+        }
+  
+        .list-none {
+              list-style-type: none;
+        }
+  
+        .btn-tnc {
+              color: #ed1c25;
+              background-color: #e5e5e5;
+              border-radius: 0;
+              border: solid 1px #dddddd;
+              padding: 15px;
+        }
+  
+        .btn-tnc:hover,
+        .btn-tnc:focus {
+              color: #ed1c25;
+        }
+  
+        .btn-tnc i {
+              font-size: 11px;
+              margin-left: 5px;
+              transition-duration: 0.3s;
+        }
+  
+        .btn-tnc.collapsed i {
+              transform: rotate(180deg);
+              transition-duration: 0.3s;
+        }
+  
+        .tnc-content {
+              background-color: #f8f8f8;
+              border: solid 1px #dddddd;
+              border-top: none;
+              padding: 25px 15px 15px 15px;
+              color: #717171;
+              line-height: 22px;
+        }
+  
+        table {
+              width: 100%;
+        }
+  
+        table tr th {
+              text-align: center;
+        }
+  
+        table tr th,
+        table tr td {
+              padding: 5px;
+        }
+  
+        .flex-box {
+              display: flex;
+  
+        }
+  
+        .flex-box > div {
+  
+              flex-grow: 1;
+        }
+  
+  
+  
+        @media (min-width: 992px) {
+              .carousel a.carousel-control {
+                    top: 45%;
+              }
+  
+              .carousel a.carousel-control span.glyphicon {
+                    font-size: 20px;
+              }
+  
+              .carousel a.carousel-control span.glyphicon-chevron-right {
+                    right: 40%;
+              }
+  
+              .carousel a.carousel-control span.glyphicon-chevron-left {
+                    left: 40%;
+              }
+        }
+  
+        @media (max-width: 991px) {
+              .no-padding-sm {
+                    padding-left: 0px;
+                    padding-right: 0px;
+              }
+  
+              .no-margin-sm {
+                    margin-left: 0px;
+                    margin-right: 0px;
+              }
+  
+  
+  
+  
+        }
+  
+  
+        @media (max-width:480px) {
+  
+              .flex-box{
+                    flex-wrap: wrap;
+              }
+              .flex-box > div {
+  
+                    width: 50%;
+              }
+  
+              .flex-box > div:nth-last-child() {
+  
+                    width: 100%;
+              }
+  
+  
+        }
+  </style>
+  <!--{cke_protected}{C}%3C!%2D%2D%0A%20%20%20%20%20%20%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%20%2D%2D%3E-->
+  <div class="row no-margin">
+        <div class="col-sm-12 no-padding"><img class="img hidden-xs"
+                    data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_Header.png"
+                    src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_Header.png"> <img
+                    class="img visible-xs"
+                    data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_HAPS.png"
+                    src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_HAPS.png"></div>
+  </div>
+  <div class="row no-margin">
+        <div class="col-xs-12 no-padding">
+              <div class="row no-margin">
+                    <div class="col-md-3 col-xs-6 no-padding"><a
+                                data-cke-saved-href="https://www.alfacart.com/promo/99-fashion"
+                                href="https://www.alfacart.com/promo/99-fashion" target="_blank"
+                                mobile-link="alfacart://catalog/12393"><img class="img-responsive hidden-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B1.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B1.png">
+                                <img class="img-responsive visible-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM1-FASH.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM1-FASH.png">
+                          </a></div>
+                    <div class="col-md-3 col-xs-6 no-padding"><a
+                                data-cke-saved-href="https://www.alfacart.com/promo/99-personalcare"
+                                href="https://www.alfacart.com/promo/99-personalcare" target="_blank"
+                                mobile-link="alfacart://catalog/12394"><img class="img-responsive hidden-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B2.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B2.png">
+                                <img class="img-responsive visible-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM2-HB.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM2-HB.png">
+                          </a></div>
+                    <div class="col-md-3 col-xs-6 no-padding"><a
+                                data-cke-saved-href="https://www.alfacart.com/promo/99-rumahdapur"
+                                href="https://www.alfacart.com/promo/99-rumahdapur" target="_blank"
+                                mobile-link="alfacart://catalog/12395"><img class="img-responsive hidden-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B3.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B3.png">
+                                <img class="img-responsive visible-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM3-HL.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM3-HL.png">
+                          </a></div>
+                    <div class="col-md-3 col-xs-6 no-padding"><a
+                                data-cke-saved-href="https://www.alfacart.com/promo/99-babykids"
+                                href="https://www.alfacart.com/promo/99-babykids" target="_blank"
+                                mobile-link="alfacart://catalog/12396"><img class="img-responsive hidden-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B4.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B4.png">
+                                <img class="img-responsive visible-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM4-BK.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM4-BK.png">
+                          </a></div>
+                    <div class="col-md-3 col-xs-6 no-padding"><a
+                                data-cke-saved-href="https://www.alfacart.com/promo/99-homecare"
+                                href="https://www.alfacart.com/promo/99-homecare" target="_blank"
+                                mobile-link="alfacart://catalog/12397"><img class="img-responsive hidden-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B5.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B5.png">
+                                <img class="img-responsive visible-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM5-HC.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM5-HC.png">
+                          </a></div>
+                    <div class="col-md-3 col-xs-6 no-padding"><a
+                                data-cke-saved-href="https://www.alfacart.com/promo/99-hobiotomotif"
+                                href="https://www.alfacart.com/promo/99-hobiotomotif" target="_blank"
+                                mobile-link="alfacart://catalog/12398"><img class="img-responsive hidden-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B6.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B6.png">
+                                <img class="img-responsive visible-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM6-HO.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM6-HO.png">
+                          </a></div>
+                    <div class="col-md-3 col-xs-6 no-padding"><a
+                                data-cke-saved-href="https://www.alfacart.com/promo/99-elektronik"
+                                href="https://www.alfacart.com/promo/99-elektronik" target="_blank"
+                                mobile-link="alfacart://catalog/12399"><img class="img-responsive hidden-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B7.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B7.png">
+                                <img class="img-responsive visible-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM7-EL.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM7-EL.png">
+                          </a></div>
+                    <div class="col-md-3 col-xs-6 no-padding"><a
+                                data-cke-saved-href="https://www.alfacart.com/promo/99-groseri"
+                                href="https://www.alfacart.com/promo/99-groseri" target="_blank"
+                                mobile-link="alfacart://catalog/12400"><img class="img-responsive hidden-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B8.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B8.png">
+                                <img class="img-responsive visible-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM8-GRO.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM8-GRO.png">
+                          </a></div>
+              </div>
+        </div>
+  </div>
+  <div class="row no-margin">
+        <div class="col-sm-12 no-padding"><img class="img-responsive hidden-xs"
+  
+                    src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/2019/ADER5006_B9-99-REV.png"> <img
+                    class="img-responsive visible-xs"
+  
+                    src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/2019/ADER5006_APS-B9-99-REV.png">
+        </div>
+  </div>
+  <div class="row no-margin ">
+        <div class="col-xs-12 no-padding">
+              <div class="row no-margin flex-box">
+                          <div> <a data-cke-saved-href="https://www.alfacart.com/promo/99-unilever"
+                                href="https://www.alfacart.com/promo/99-unilever" target="_blank"
+                                mobile-link="alfacart://catalog/12401"><img class="img-responsive hidden-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B10-uli.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B10-uli.png">
+                                <img class="img-responsive visible-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM9-ULI.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM9-ULI.png">
+                          </a></div>
+                          <div> <a data-cke-saved-href="https://www.alfacart.com/promo/99-nestle"
+                                href="https://www.alfacart.com/promo/99-nestle" target="_blank"
+                                mobile-link="alfacart://catalog/12402"><img class="img-responsive hidden-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B11-nestle.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B11-nestle.png">
+                                <img class="img-responsive visible-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM11-NESTLE.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM11-NESTLE.png">
+                          </a></div>
+                          <div> <a data-cke-saved-href="https://www.alfacart.com/promo/99-wings"
+                                href="https://www.alfacart.com/promo/99-wings" target="_blank"
+                                mobile-link="alfacart://catalog/12403"><img class="img-responsive hidden-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B12-wings.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B12-wings.png">
+                                <img class="img-responsive visible-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM10-WINGS.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM10-WINGS.png">
+                          </a></div>
+                          <div> <a
+                                data-cke-saved-href="https://www.alfacart.com/promo/99-sarihusada"
+                                href="https://www.alfacart.com/promo/99-sarihusada" target="_blank"
+                                mobile-link="alfacart://catalog/12404"><img class="img-responsive hidden-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B13-sarhus.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B13-sarhus.png">
+                                <img class="img-responsive visible-xs"
+                                      data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM12-SARHUS.png"
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM12-SARHUS.png">
+                          </a></div>
+                          <div> <a
+                                href="https://www.alfacart.com/promo/99-sasa" target="_blank"
+                                mobile-link="alfacart://catalog/12404"><img class="img-responsive hidden-xs"
+  
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_B14-sasa.png"> <img class="img-responsive visible-xs"
+  
+                                      src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/agustus/2019/ADER5006_BM13-SASA.png">
+                          </a></div>
+  
+              </div>
+        </div>
+  </div>
+
+
+<div class="row no-margin mobile-popup mb-10">
+    <div class="col-md-12 no-padding mobile-popup-title"><span id="info-cicilan-btn"><strong>Syarat & Ketentuan</strong></span></div>
+    <div class="col-md-12 no-padding mobile-popup-content">
+        <div id="info-cicilan-box">
+            <div class="row no-margin">
+                <div class="col-md-12 no-padding">
+                    <div class="row no-margin">
+                        <div class="col-md-12 no-padding">
+                            <div class="row no-margin">
+                                <ol>
+
+                                    <li> Kode Voucher <b>99FAS</b>
+                                        <ul>
+                
+                                            <li> Diskon 9%</li>
+                                            <li> Maksimal potongan Rp 30.000</li>
+                                            <li> Minimal belanja Rp 99.000</li>
+                                            <li> Kuota 50 transaksi</li>
+                                            <li> Berlaku untuk produk Fashion</li>
+                                            <li> Periode 1 September 2019 </li>
+                                        </ul>
+                                    </li>
+                                    <li> Kode Voucher <b>99HB</b>
+                                        <ul>
+                
+                                            <li> Diskon 9%</li>
+                                            <li> Maksimal potongan Rp 20.000</li>
+                                            <li> Minimal belanja Rp 99.000</li>
+                                            <li> Kuota 100 transaksi</li>
+                                            <li> Berlaku untuk produk kesehatan dan kecantikan</li>
+                                            <li> Periode 2 September 2019</li>
+                                        </ul>
+                                    </li>
+                
+                                    <li> Kode Voucher <b>99HL</b>
+                                        <ul>
+                
+                                            <li> Diskon 9%</li>
+                                            <li> Maksimal potongan Rp 20.000</li>
+                                            <li> Minimal belanja Rp 99.000</li>
+                                            <li> Kuota 100 transaksi</li>
+                                            <li> Berlaku untuk produk perlengkapan rumah & dapur</li>
+                                            <li> Periode 3 September 2019 </li>
+                                        </ul>
+                                    </li>
+                                    <li> Kode Voucher <b>99BK</b>
+                                        <ul>
+                
+                                            <li> Diskon 9%</li>
+                                            <li> Maksimal potongan Rp 20.000</li>
+                                            <li> Minimal belanja Rp 99.000</li>
+                                            <li> Kuota 100 transaksi</li>
+                                            <li> Berlaku untuk produk perlengkapan bayi dan anak</li>
+                                            <li> Periode 4 September 2019</li>
+                                        </ul>
+                                    </li>
+                                    <li> Kode Voucher <b>99HC</b>
+                                        <ul>
+                
+                                            <li> Diskon 9%</li>
+                                            <li> Maksimal potongan Rp 20.000</li>
+                                            <li> Minimal belanja Rp 99.000</li>
+                                            <li> Kuota 100 transaksi</li>
+                                            <li> Berlaku untuk produk pembersih pakaian, rumah dan dapur</li>
+                                            <li> Periode 5 September 2019 </li>
+                                        </ul>
+                                    </li>
+                                    <li> Kode Voucher <b>99HO</b>
+                                        <ul>
+                
+                                            <li> Diskon 9%</li>
+                                            <li> Maksimal potongan Rp 20.000</li>
+                                            <li> Minimal belanja Rp 99.000</li>
+                                            <li> Kuota 100 transaksi</li>
+                                            <li> Berlaku untuk produk hobi dan otomotif</li>
+                                            <li> Periode 6 September 2019 </li>
+                                        </ul>
+                                    </li>
+                                    <li> Kode Voucher <b> 99EL</b>
+                                        <ul>
+                
+                                            <li> Diskon 9%</li>
+                                            <li> Maksimal potongan Rp 150.000</li>
+                                            <li> Minimal belanja Rp 990.000</li>
+                                            <li> Kuota 100 transaksi</li>
+                                            <li> Berlaku untuk produk pembersih pakaian, rumah dan dapur</li>
+                                            <li> Periode 7 September 2019 </li>
+                                        </ul>
+                                    </li>
+                                    <li> Kode Voucher <b>99GRO</b>
+                                        <ul>
+                
+                                            <li> Diskon 9% </li>
+                                            <li> Maksimal potongan Rp 20.000 </li>
+                                            <li> Minimal belanja Rp 99.000 </li>
+                                            <li> Kuota 1000 transaksi </li>
+                                            <li> Berlaku untuk produk pembersih pakaian, rumah dan dapur </li>
+                                            <li> Periode 8 September 2019 </li>
+                                        </ul>
+                                    </li>
+                                    <li> Hanya berlaku di Aplikasi Alfacart.com, pastikan update aplikasi Anda di Google Store</li>
+                                    <li> Satu (1) akun hanya bisa menggunakan satu (1) kali kode voucher untuk masing-masing kategori
+                                        selama
+                                        periode</li>
+                                    <li> Kode voucher tidak berlaku untuk pembelian hewan qurban, minyak goreng, rokok, susu dibawah 1
+                                        tahun,
+                                        pulsa, pln, paket data dan top up gopay</li>
+                                    <li> Jika kode voucher tidak memotong total belanjaan atau ada keterangan invalid/kode voucher sudah
+                                        melewati
+                                        batas penggunaan maka kuota kode voucher sudah habis</li>
+                                    <li> Pada saat apply voucher, sifatnya hanya BOOKING sementara, apabila setelah apply voucher
+                                        kemudian lanjut
+                                        checkout dan harga kembali normal, maka kuota kode voucher telah habis</li>
+                                    <li> Kode voucher tidak dapat diuangkan, diperjualbelikan, tidak berlaku untuk reseller dan tidak
+                                        dapat
+                                        digabungkan dengan kode promo lainnya</li>
+                                    <li> Gratis ongkos kirim untuk semua produk yang dijual di alfamart dengan minimum belanja Rp 50.000
+                                    </li>
+                                    <li> Subsidi ongkos kirim Rp 6.500 untuk semua pembelian barang di luar barang Alfamart dengan
+                                        minimum belanja
+                                        Rp 50.000</li>
+                                    <li> Hubungi Customer Service Alfacart.com di 1500860 atau cs@alfadigital.id untuk info lebih lanjut
+                                    </li>
+                
+                
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

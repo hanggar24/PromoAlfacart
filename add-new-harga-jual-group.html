@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catalog Product</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+        type="text/css">
+    <link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons/fontawesome/styles.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/core.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/components.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/fSelect.css" rel="stylesheet">
+    <link href="assets/css/custom/main.css" rel="stylesheet">
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+    <script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+    <script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="assets/js/plugins/tables/datatables/datatables.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/tables/datatables/extensions/fixed_columns.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/notifications/jgrowl.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/pickers/daterangepicker.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/pickers/anytime.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.date.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.time.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/pickers/pickadate/legacy.js"></script>
+
+    <script type="text/javascript" src="assets/js/core/app.js"></script>
+    <script type="text/javascript" src="assets/js/pages/picker_date.js"></script>
+
+    <script type="text/javascript" src="assets/js/plugins/ui/ripple.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/notifications/pnotify.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+
+    <script type="text/javascript" src="assets/js/core/app.js"></script>
+    <script type="text/javascript" src="assets/js/pages/datatables_extension_fixed_columns.js"></script>
+    <script type="text/javascript" src="assets/js/pages/form_multiselect.js"></script>
+
+    <script type="text/javascript" src="assets/js/plugins/ui/ripple.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/fSelect/fSelect.js"></script>
+    <!-- /theme JS files -->
+
+
+    <style>
+        .datatable-header .dataTables_filter {
+            display: none;
+        }
+
+        .tb-filter table tr td {
+            padding: 12px 5px;
+        }
+
+        .fs-wrap {
+            width: 100%;
+        }
+
+        .fs-wrap .fs-label-wrap {
+            border: none;
+            border-bottom: solid 1px #dddddd;
+            padding: 8px 16px 8px 0px;
+        }
+
+        .fs-wrap .fs-label-wrap .fs-label {
+            padding: 5px 22px 4px 0px;
+        }
+
+        .fs-wrap .fs-option {
+            padding: 12px 8px;
+        }
+
+        .fs-wrap .fs-search {
+            padding: 10px 4px;
+        }
+
+        .tb-filter.scrollable table tr td {
+            min-width: 150px;
+        }
+
+        .tb-filter.scrollable table tr td:last-child {
+            position: absolute;
+            right: 10px;
+        }
+
+        .tb-filter.scrollable table tr td table tr td:last-child {
+            position: unset;
+        }
+
+        .tb-filter.scrollable {
+            margin-right: 150px;
+        }
+        .daterangepicker.dropdown-menu {
+left: 281px !important;
+
+}
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Main navbar -->
+    <div class="navbar navbar-inverse bg-indigo">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html"><img src="assets/images/logo_light.png" alt=""></a>
+
+            <ul class="nav navbar-nav visible-xs-block">
+                <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+                <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-mobile">
+            <ul class="nav navbar-nav">
+                <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-puzzle3"></i>
+                        <span class="visible-xs-inline-block position-right">Git updates</span>
+                        <span class="status-mark border-orange-400"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-content">
+                        <div class="dropdown-content-heading">
+                            Git updates
+                            <ul class="icons-list">
+                                <li><a href="#"><i class="icon-sync"></i></a></li>
+                            </ul>
+                        </div>
+
+                        <ul class="media-list dropdown-content-body width-350">
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#"
+                                        class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i
+                                            class="icon-git-pull-request"></i></a>
+                                </div>
+
+                                <div class="media-body">
+                                    Drop the IE <a href="#">specific hacks</a> for temporal inputs
+                                    <div class="media-annotation">4 minutes ago</div>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#"
+                                        class="btn border-warning text-warning btn-flat btn-rounded btn-icon btn-sm"><i
+                                            class="icon-git-commit"></i></a>
+                                </div>
+
+                                <div class="media-body">
+                                    Add full font overrides for popovers and tooltips
+                                    <div class="media-annotation">36 minutes ago</div>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#"
+                                        class="btn border-info text-info btn-flat btn-rounded btn-icon btn-sm"><i
+                                            class="icon-git-branch"></i></a>
+                                </div>
+
+                                <div class="media-body">
+                                    <a href="#">Chris Arney</a> created a new <span class="text-semibold">Design</span>
+                                    branch
+                                    <div class="media-annotation">2 hours ago</div>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#"
+                                        class="btn border-success text-success btn-flat btn-rounded btn-icon btn-sm"><i
+                                            class="icon-git-merge"></i></a>
+                                </div>
+
+                                <div class="media-body">
+                                    <a href="#">Eugene Kopyov</a> merged <span class="text-semibold">Master</span> and
+                                    <span class="text-semibold">Dev</span> branches
+                                    <div class="media-annotation">Dec 18, 18:36</div>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#"
+                                        class="btn border-primary text-primary btn-flat btn-rounded btn-icon btn-sm"><i
+                                            class="icon-git-pull-request"></i></a>
+                                </div>
+
+                                <div class="media-body">
+                                    Have Carousel ignore keyboard events
+                                    <div class="media-annotation">Dec 12, 05:46</div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="dropdown-content-footer">
+                            <a href="#" data-popup="tooltip" title="All activity"><i
+                                    class="icon-menu display-block"></i></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="navbar-right">
+                <p class="navbar-text">Morning, Victoria!</p>
+                <p class="navbar-text"><span class="label bg-success-400">Online</span></p>
+
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-bell2"></i>
+                            <span class="visible-xs-inline-block position-right">Activity</span>
+                            <span class="status-mark border-orange-400"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-content">
+                            <div class="dropdown-content-heading">
+                                Activity
+                                <ul class="icons-list">
+                                    <li><a href="#"><i class="icon-menu7"></i></a></li>
+                                </ul>
+                            </div>
+
+                            <ul class="media-list dropdown-content-body width-350">
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#" class="btn bg-success-400 btn-rounded btn-icon btn-xs"><i
+                                                class="icon-mention"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="#">Taylor Swift</a> mentioned you in a post "Angular JS. Tips and
+                                        tricks"
+                                        <div class="media-annotation">4 minutes ago</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#" class="btn bg-pink-400 btn-rounded btn-icon btn-xs"><i
+                                                class="icon-paperplane"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        Special offers have been sent to subscribed users by <a href="#">Donna
+                                            Gordon</a>
+                                        <div class="media-annotation">36 minutes ago</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#" class="btn bg-blue btn-rounded btn-icon btn-xs"><i
+                                                class="icon-plus3"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="#">Chris Arney</a> created a new <span
+                                            class="text-semibold">Design</span> branch in <span
+                                            class="text-semibold">Limitless</span> repository
+                                        <div class="media-annotation">2 hours ago</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#" class="btn bg-purple-300 btn-rounded btn-icon btn-xs"><i
+                                                class="icon-truck"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        Shipping cost to the Netherlands has been reduced, database updated
+                                        <div class="media-annotation">Feb 8, 11:30</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#" class="btn bg-warning-400 btn-rounded btn-icon btn-xs"><i
+                                                class="icon-bubble8"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        New review received on <a href="#">Server side integration</a> services
+                                        <div class="media-annotation">Feb 2, 10:20</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#" class="btn bg-teal-400 btn-rounded btn-icon btn-xs"><i
+                                                class="icon-spinner11"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <strong>January, 2016</strong> - 1320 new users, 3284 orders, $49,390 revenue
+                                        <div class="media-annotation">Feb 1, 05:46</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-bubble8"></i>
+                            <span class="visible-xs-inline-block position-right">Messages</span>
+                            <span class="status-mark border-orange-400"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-content width-350">
+                            <div class="dropdown-content-heading">
+                                Messages
+                                <ul class="icons-list">
+                                    <li><a href="#"><i class="icon-compose"></i></a></li>
+                                </ul>
+                            </div>
+
+                            <ul class="media-list dropdown-content-body">
+                                <li class="media">
+                                    <div class="media-left">
+                                        <img src="assets/images/placeholder.jpg" class="img-circle img-sm" alt="">
+                                        <span class="badge bg-danger-400 media-badge">5</span>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="#" class="media-heading">
+                                            <span class="text-semibold">James Alexander</span>
+                                            <span class="media-annotation pull-right">04:58</span>
+                                        </a>
+
+                                        <span class="text-muted">who knows, maybe that would be the best thing for
+                                            me...</span>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="media-left">
+                                        <img src="assets/images/placeholder.jpg" class="img-circle img-sm" alt="">
+                                        <span class="badge bg-danger-400 media-badge">4</span>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="#" class="media-heading">
+                                            <span class="text-semibold">Margo Baker</span>
+                                            <span class="media-annotation pull-right">12:16</span>
+                                        </a>
+
+                                        <span class="text-muted">That was something he was unable to do
+                                            because...</span>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="media-left"><img src="assets/images/placeholder.jpg"
+                                            class="img-circle img-sm" alt=""></div>
+                                    <div class="media-body">
+                                        <a href="#" class="media-heading">
+                                            <span class="text-semibold">Jeremy Victorino</span>
+                                            <span class="media-annotation pull-right">22:48</span>
+                                        </a>
+
+                                        <span class="text-muted">But that would be extremely strained and
+                                            suspicious...</span>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="media-left"><img src="assets/images/placeholder.jpg"
+                                            class="img-circle img-sm" alt=""></div>
+                                    <div class="media-body">
+                                        <a href="#" class="media-heading">
+                                            <span class="text-semibold">Beatrix Diaz</span>
+                                            <span class="media-annotation pull-right">Tue</span>
+                                        </a>
+
+                                        <span class="text-muted">What a strenuous career it is that I've
+                                            chosen...</span>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="media-left"><img src="assets/images/placeholder.jpg"
+                                            class="img-circle img-sm" alt=""></div>
+                                    <div class="media-body">
+                                        <a href="#" class="media-heading">
+                                            <span class="text-semibold">Richard Vango</span>
+                                            <span class="media-annotation pull-right">Mon</span>
+                                        </a>
+
+                                        <span class="text-muted">Other travelling salesmen live a life of
+                                            luxury...</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="dropdown-content-footer">
+                                <a href="#" data-popup="tooltip" title="All messages"><i
+                                        class="icon-menu display-block"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /main navbar -->
+
+
+    <!-- Page container -->
+    <div class="page-container">
+
+        <!-- Page content -->
+        <div class="page-content">
+
+            <!-- Main sidebar -->
+            <div class="sidebar sidebar-main sidebar-default">
+                <div class="sidebar-content">
+
+                    <!-- User menu -->
+                    <div class="sidebar-user-material">
+                        <div class="category-content">
+                            <div class="sidebar-user-material-content">
+                                <a href="#"><img src="assets/images/placeholder.jpg" class="img-circle img-responsive"
+                                        alt=""></a>
+                                <h6>Victoria Baker</h6>
+                                <span class="text-size-small">Santa Ana, CA</span>
+                            </div>
+
+                            <div class="sidebar-user-material-menu">
+                                <a href="#user-nav" data-toggle="collapse"><span>My account</span> <i
+                                        class="caret"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="navigation-wrapper collapse" id="user-nav">
+                            <ul class="navigation">
+                                <li><a href="#"><i class="icon-user-plus"></i> <span>My profile</span></a></li>
+                                <li><a href="#"><i class="icon-coins"></i> <span>My balance</span></a></li>
+                                <li><a href="#"><i class="icon-comment-discussion"></i> <span><span
+                                                class="badge bg-teal-400 pull-right">58</span> Messages</span></a></li>
+                                <li class="divider"></li>
+                                <li><a href="#"><i class="icon-cog5"></i> <span>Account settings</span></a></li>
+                                <li><a href="#"><i class="icon-switch2"></i> <span>Logout</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /user menu -->
+
+
+                    <!-- Main navigation -->
+                    <div class="sidebar-category sidebar-category-visible">
+                        <div class="category-content no-padding">
+                            <ul class="navigation navigation-main navigation-accordion">
+
+                                <li>
+                                    <a href="#"><i class="icon-stack2"></i> <span>ALFAMIKRO</span></a>
+                                    <ul>
+                                        <li class="active"><a href=""><i class="icon-list3"></i> Catalog Product</a>
+                                        </li>
+                                        <li><a href="tipe-toko-ho.html"><i class="fa fa-users"></i> Tipe Toko OBA</a>
+                                        </li>
+                                        <li><a href="group-custom.html"><i class="fa fa-object-group"></i> Group
+                                                Custom</a></li>
+                                    </ul>
+                                </li>
+                                <!-- /page kits -->
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /main navigation -->
+
+                </div>
+            </div>
+            <!-- /main sidebar -->
+
+
+            <!-- Main content -->
+            <div class="content-wrapper">
+
+                <!-- Page header -->
+                <div class="page-header page-header-default">
+
+                    <div class="breadcrumb-line">
+                        <ul class="breadcrumb">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Alfamikro</a></li>
+                            <li class="active">Catalog Management</li>
+                        </ul>
+
+                        <ul class="breadcrumb-elements">
+                            <li><a href="#"><i class="icon-comment-discussion position-left"></i> Support</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="icon-gear position-left"></i>
+                                    Settings
+                                    <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a href="#"><i class="icon-user-lock"></i> Account security</a></li>
+                                    <li><a href="#"><i class="icon-statistics"></i> Analytics</a></li>
+                                    <li><a href="#"><i class="icon-accessibility"></i> Accessibility</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#"><i class="icon-gear"></i> All settings</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /page header -->
+
+
+                <!-- Content area -->
+                <div class="content">
+
+
+
+                    <div class="panel panel-flat p-40">
+
+
+
+
+                        <div class="row ">
+
+
+                            <div class="col-xs-8 text-left">
+
+                                <h2>
+                                    <span>
+                                            <i class="icon-arrow-left8 " style="font-size:30px;"></i> </span>  <span>  <i class="icon-file-text2 mx-30" style="font-size:40px;"></i> Tambah Harga Jual Group</span>
+                                </h2>
+
+
+
+
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="row main-layout p-40 my-30">
+                            <div class="row">
+
+
+
+                                <div class="col-xs-12">
+                                    <div class="row">
+                                        <div class="col-xs-8">
+                                            <div class="form-horizontal">
+
+
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-xs-3 pt-10">
+                                                        Start Date
+                                                    </label>
+                                                    <div class="col-xs-7">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="icon-calendar22"></i></span>
+
+                                                                    <input type="text" class="form-control daterange-time" value="03/18/2019 - 03/23/2019">
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+
+                                                <div class="form-group mt-20">
+                                                    <label class="col-xs-3 control-label">
+                                                        PPN </label>
+                                                    <div class="col-xs-3">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="codOpt" checked="checked">
+                                                            Yes
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="codOpt">
+                                                            No
+                                                        </label>
+                                                    </div>
+
+
+                                                </div>
+
+                                                <div class="form-group mt-20">
+                                                    <label class="control-label col-xs-3">Harga Default</label>
+                                                    <div class="col-xs-3">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div class="row">
+                                                <div class=" col-xs-offset-6 col-xs-6">
+                                                    <button class="btn btn-block btn-primary"> <i class="glyphicon glyphicon-pencil mr-10"></i> Edit</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-xs-offset-8 col-xs-2">
+                                    <button class="btn btn-block btn-danger"> Hapus</button>
+                                </div>
+
+                                <div class="col-xs-2">
+                                    <button class="btn btn-block btn-primary" data-target="#modal_review" data-toggle="modal"> Review</button>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-12 scroll">
+
+                                    <h4> Filter</h4>
+
+
+                                    <table class="table datatable-tipe-toko table-bordered w-150    ">
+                                        <thead>
+                                            <tr class="gray">
+                                                <th>Branch
+                                                    Group
+                                                </th>
+                                                <th colspan="2"> Max COGS (Rp)
+                                                </th>
+                                                <th colspan="2"> Harga
+                                                    Jual (Rp)
+                                                </th>
+
+                                                <th colspan="2">
+
+                                                    Deviasi (Rp)
+                                                </th>
+                                                <th colspan="2"> Max Gross Margin (%)
+                                                </th>
+
+                                                <th> Status
+                                                </th>
+
+
+                                                <th> Action
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <select class="form-control">
+                                                        <option value=""></option>
+                                                    </select>
+                                                </td>
+                                                <td> <input type="text" class="form-control" placeholder="From.." />
+                                                </td>
+                                                <td><input type="text" class="form-control" placeholder="To.." />
+                                                </td>
+                                                <td> <input type="text" class="form-control" placeholder="From.." />
+                                                </td>
+                                                <td><input type="text" class="form-control" placeholder="To.." />
+                                                </td>
+                                                <td> <input type="text" class="form-control" placeholder="From.." />
+                                                </td>
+                                                <td><input type="text" class="form-control" placeholder="To.." />
+                                                </td>
+                                                <td> <input type="text" class="form-control" placeholder="From.." />
+                                                </td>
+                                                <td><input type="text" class="form-control" placeholder="To.." />
+                                                </td>
+
+                                                <td><select class="form-control">
+                                                        <option value=""></option>
+                                                    </select>
+                                                </td>
+                                                <td>
+
+                                                    <ul class=" col-xs-8 " style="list-style-type:none;">
+
+
+                                                        <li>
+
+                                                            <button class="btn btn-search ">
+                                                                <i class="glyphicon glyphicon-search"></i>
+                                                                Search</button>
+
+                                                        </li>
+
+                                                        <li class="mt-10">
+                                                        <li>
+
+                                                            <button class="btn btn-reset "> <i class="icon-make-group position-left"></i>
+
+                                                                Reset</button>
+
+
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+
+                                </div>
+                            </div>
+
+                            <div class="row mt-20">
+                                <div class="col-xs-12 scroll">
+
+                                    <h4> Harga Detail</h4>
+
+
+                                    <table class="table datatable-tipe-toko  w-150    ">
+                                        <thead>
+                                            <tr class="gray">
+
+                                                <th> </th>
+                                                <th>Branch
+                                                    Group
+                                                </th>
+                                                <th> Costumer Group
+                                                </th>
+                                                <th>
+                                                    Max COGS (Rp)
+                                                </th>
+                                                <th>
+                                                    Harga Jual (Rp)
+                                                </th>
+
+                                                <th>
+
+                                                    Deviasi (Rp)
+                                                </th>
+                                                <th> Max Gross Margin (%)
+                                                </th>
+
+                                                <th> Status
+                                                </th>
+
+
+                                                <th> Action
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td>
+                                                    <div class="row">
+                                                        <div class="col-xs-10">
+                                                            <select class="form-control">
+                                                                <option value="AMA MM">
+                                                                    Jabodetabek
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-xs-2 pt-10">
+                                                            <i class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal_active_branch"></i>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </td>
+                                                <td> <select class="form-control">
+                                                    <option value="AMA MM">
+                                                        AMA-MM
+                                                    </option>
+                                                </select></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td> <select class="form-control">
+                                                    <option value="AMA MM">
+                                                Active
+                                                    </option>
+                                                </select></td>
+                                                <td><i class="icon-plus-circle2 mr-10px"></i> <i class="icon-minus-circle2"></i></td>
+                                            </tr>
+
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox">
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-xs-10">
+                                                        <select class="form-control">
+                                                            <option value="AMA MM">
+                                                                Jabodetabek
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-xs-2 pt-10">
+                                                        <i class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal_active_branch"></i>
+                                                    </div>
+                                                </div>
+                                        
+                                        
+                                        
+                                        
+                                            </td>
+                                            <td> <select class="form-control">
+                                                <option value="AMA MM">
+                                                    REG-R2
+                                                </option>
+                                            </select></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td> <select class="form-control">
+                                                    <option value="AMA MM">
+                                                        Active
+                                                    </option>
+                                                </select></td>
+                                            <td><i class="icon-plus-circle2 mr-10px"></i> <i class="icon-minus-circle2"></i></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+
+                                </div>
+                            </div>
+
+                            <div class="row my-30">
+                                    <div class="col-xs-2 col-xs-offset-10">
+                                        <button class="btn btn-primary btn-block" data-toggle="modal"
+                                            data-target="#modal_save"> Save</button>
+                                    </div>
+                                </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /content area -->
+
+        </div>
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+    </div>
+    <!-- /page container -->
+
+
+    <div id="modal_review" class="modal fade">
+            <div class="modal-dialog m-auto100px modal-lg ">
+                <div class="modal-content modal-custom">
+                    <div class="modal-body text-center">
+    
+    
+    
+                        <div class="row">
+                            <div class="col-xs-3 text-left">
+    
+                                <p>SEPATU</p>
+                                <p>Detail Harga Jual per-branch</p>
+    
+                                <p>Harga Default Rp.18000</p>
+    
+                            </div>
+    
+                            <div class="col-xs-2 col-xs-offset-7">
+                                <button type="button" class="close btn-close" data-dismiss="modal" style="position: absolute;
+                                    top: -65px;
+                                    right: -4px;
+                                    ">&times;</button>
+                                <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#modal_edit"
+                                    data-dismiss="modal"> <i class="glyphicon glyphicon-pencil mr-10"></i>
+                                    Edit
+                                </button>
+                            </div>
+                        </div>
+    
+                        <div class="row my-30">
+                            <div class="col-xs-12 scroll">
+    
+                                <h4 class="text-left"> Filter</h4>
+    
+    
+                                <table class="table datatable-tipe-toko table-bordered w-150    ">
+                                    <thead>
+                                        <tr class="gray">
+                                            <th>Branch
+
+                                            </th>
+                                            <th> Customer Group</th>
+                                            <th colspan="2">  COGS (Rp)
+                                            </th>
+                                            <th colspan="2"> Harga
+                                                Jual (Rp)
+                                            </th>
+    
+                                            <th colspan="2">
+    
+                                                Deviasi (Rp)
+                                            </th>
+                                            <th colspan="2">  Gross Margin (%)
+                                            </th>
+    
+
+    
+    
+                                            <th> Action
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td> <input type="text" class="form-control" placeholder="From.." />
+                                                </td>
+                                            <td>
+                                                <select class="form-control">
+                                                    <option value=""></option>
+                                                </select>
+                                            </td>
+                                            <td> <input type="text" class="form-control" placeholder="From.." />
+                                            </td>
+                                            <td><input type="text" class="form-control" placeholder="To.." />
+                                            </td>
+                                            <td> <input type="text" class="form-control" placeholder="From.." />
+                                            </td>
+                                            <td><input type="text" class="form-control" placeholder="To.." />
+                                            </td>
+                                            <td> <input type="text" class="form-control" placeholder="From.." />
+                                            </td>
+                                            <td><input type="text" class="form-control" placeholder="To.." />
+                                            </td>
+                                            <td> <input type="text" class="form-control" placeholder="From.." />
+                                            </td>
+                                            <td><input type="text" class="form-control" placeholder="To.." />
+                                            </td>
+
+                                            <td>
+    
+                                                <ul class=" col-xs-8 " style="list-style-type:none;">
+    
+    
+                                                    <li>
+    
+                                                        <button class="btn btn-search ">
+                                                            <i class="glyphicon glyphicon-search"></i>
+                                                            Search</button>
+    
+                                                    </li>
+    
+                                                    <li class="mt-10">
+                                                    <li>
+    
+                                                        <button class="btn btn-reset "> <i class="icon-make-group position-left"></i>
+    
+                                                            Reset</button>
+    
+    
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+    
+    
+                            </div>
+                        </div>
+    
+    
+                        <div class="row my-30">
+                            <div class="col-xs-12 scroll">
+    
+                                <table class="table datatable-tipe-toko  w-150    ">
+                                    <thead>
+                                        <tr class="gray">
+    
+                                            <th> </th>
+                                            <th>Branch
+    
+                                            </th>
+                                            <th>Customer Group</th>
+                                            <th> COGS (Rp)
+                                            </th>
+                                            <th>
+                                                Harga Jual (Rp)
+                                            </th>
+    
+    
+                                            <th>
+    
+                                                Deviasi (Rp)
+                                            </th>
+                                            <th> Gross Margin (%)
+                                            </th>
+    
+                                            <th> Edit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox">
+                                            </td>
+                                            <td>
+    
+                                                Cikokol
+    
+    
+    
+                                            </td>
+                                            <td> <select class="form-control">
+                                                    <option value=""></option>
+                                                </select> </td>
+                                            <td> Rp 14.000</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td> <i class="glyphicon glyphicon-pencil"></i></td>
+    
+                                        </tr>
+    
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox">
+                                            </td>
+                                            <td>
+    
+                                                Bekasi
+    
+    
+    
+    
+                                            </td>
+                                            <td> <select class="form-control">
+                                                    <option value=""></option>
+                                                </select> </td>
+                                            <td> Rp. 15.000</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+    
+                                            <td> <i class="glyphicon glyphicon-pencil"></i></td>
+    
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                    <div class="row my-30 text-right">
+
+                            <button class="btn btn-primary col-xs-2 col-xs-offset-10 "> Save</button>
+                                                </div>
+
+    
+                    </div>
+    
+    
+                </div>
+            </div>
+        </div>
+        <div id="modal_save" class="modal fade">
+                <div class="modal-dialog m-auto100px modal-sm ">
+                    <div class="modal-content modal-custom">
+                        <div class="modal-body text-center">
+        
+                            <span> <i class="icon-notification2 icon-danger "></i></span>
+                            <h1 class="text-danger">Apakah anda yakin?</h1>
+        
+        
+                        </div>
+        
+                        <div class="modal-footer">
+                            <div class="row text-center">
+        
+                                <div class="col-xs-4 col-xs-offset-2">
+                                    <button type="button" class="btn btn-primary  btn-block" data-dismiss="modal">Ya </button>
+                                </div>
+                                <div class="col-xs-4">
+                                    <button type="button" class="btn btn-danger  btn-block" data-dismiss="modal">Tidak </button>
+                                </div>
+        
+        
+                            </div>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div id="modal_edit" class="modal fade scroll">
+                <div class="modal-dialog m-auto100px modal-lg ">
+                    <div class="modal-content modal-custom">
+                        <div class="modal-body text-center">
+                            <button type="button" class="close btn-close" data-dismiss="modal" style="position: absolute;
+                                top: -50px;
+                                right: -4px;
+                                ">&times;</button>
+                            <div class="row mb-30">
+                                <div class="col">
+        
+                                    <div class="alert alert-warning alert-bordered">
+                                        <button type="button" class="close" data-dismiss="alert"><span>×</span><span
+                                                class="sr-only">Close</span></button>
+                                        <span class="text-semibold">Warning!</span> Better <a href="#" class="alert-link">check
+                                            yourself</a>, you're not looking too good.
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="row">
+                                <div class="col-xs-3 text-left">
+        
+                                    <p>SEPATU</p>
+                                    <p>Detail Harga Jual per-branch</p>
+        
+                                    <p>Harga Default Rp.18000</p>
+        
+                                </div>
+        
+                                <div class="col-xs-2 col-xs-offset-7">
+        
+                                    <button class="btn btn-block btn-primary"> <i class="glyphicon glyphicon-pencil mr-10"></i>
+                                        Edit
+                                    </button>
+                                </div>
+                            </div>
+        
+        
+        
+                            <div class="row my-30">
+                                <div class="col-xs-12 scroll">
+        
+                                    <table class="table datatable-tipe-toko  w-150    ">
+                                        <thead>
+                                            <tr class="gray">
+        
+                                                <th> </th>
+                                                <th>Branch </th>
+                                                <th>Customer Group</th>
+        
+                                                <th> COGS (Rp)
+                                                </th>
+        
+                                                <th>Tipe</th>
+                                                <th>
+                                                    Harga Jual (Rp)
+                                                </th>
+                                                <th>
+                                                    Deviasi (Rp)
+                                                </th>
+                                                <th> Gross Margin (%)
+                                                </th>
+        
+                                                <th> Edit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td>
+        
+                                                    Cikokol
+        
+        
+        
+                                                </td>
+        
+                                                <td> <select class="form-control">
+                                                        <option value=""></option>
+                                                    </select> </td>
+                                                <td></td>
+                                                <td><select class="form-control">
+                                                        <option value=""></option>
+                                                    </select></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td> <i class="glyphicon glyphicon-pencil"></i></td>
+        
+                                            </tr>
+        
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td>
+        
+                                                    Bekasi
+        
+        
+        
+        
+                                                </td>
+        
+                                                <td> <select class="form-control">
+                                                        <option value=""></option>
+                                                    </select></td>
+                                                <td></td>
+                                                <td><select class="form-control">
+                                                        <option value=""></option>
+                                                    </select></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+        
+                                                <td> <i class="glyphicon glyphicon-pencil"></i></td>
+        
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+        
+        
+        
+                            <div class="row my-30">
+                                <div class="col-xs-8 col-xs-offset-4">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="control-label col-xs-2 pt-10">
+                                                User Email</label>
+                                            <div class="col-xs-3">
+                                                <select class="form-control">
+                                                    <option value=""></option>
+                                                </select>
+                                            </div>
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label class="control-label col-xs-2 pt-10">
+                                                Google OTP</label>
+                                            <div class="col-xs-3">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group text-left">
+                                            <span class="text-danger"> The OTP you entered is incorrect</span>
+                                        </div>
+        
+        
+                                        <div class="form-group my-30">
+                                            <div class="col-xs-4 col-xs-offset-1">
+                                                <button class="btn btn-primary btn-block" data-dismiss="modal">
+                                                    Approve
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+        
+        
+        
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+
+            <div id="modal_active_branch" class="modal fade">
+                <div class="modal-dialog m-auto100px ">
+                    <div class="modal-content modal-custom">
+                        <div class="modal-header">
+                            <button type="button" class="close btn-close" data-dismiss="modal" style="margin: -70px -20px 0 0;
+                             ">&times;</button>
+                            <h2 class="modal-title">View Active Branch Group</h2>
+                        </div>
+        
+                        <div class="modal-body">
+                            <div class="row mb-20">
+                                <div class="col-xs-3   ">
+                                    Branch Jawa
+                                </div>
+                                <div class="col-xs-9 ">
+        
+                                    <div class="row">
+                                        <div class="col-xs-6 mb-20">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox"> KZ01-JABODETABEK
+                                            </label>
+                                        </div>
+        
+                                        <div class="col-xs-6 mb-20">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">KZ02- JAWA BARAT
+                                            </label>
+                                        </div>
+        
+                                        <div class="col-xs-6 mb-20">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">KZ02- JAWA BARAT
+                                            </label>
+                                        </div>
+                                    </div>
+        
+                                </div>
+                            </div>
+        
+                            <div class="row">
+                                <div class="col-xs-3   ">
+                                    Branch Jawa
+                                </div>
+                                <div class="col-xs-9 ">
+        
+                                    <div class="row">
+                                        <div class="col-xs-6 mb-20">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox"> KZ01-JABODETABEK
+                                            </label>
+                                        </div>
+        
+                                        <div class="col-xs-6 mb-20">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">KZ02- JAWA BARAT
+                                            </label>
+                                        </div>
+        
+                                        <div class="col-xs-6 mb-20">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">KZ02- JAWA BARAT
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 mb-20">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">KZ02- JAWA BARAT
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 mb-20">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">KZ02- JAWA BARAT
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 mb-20">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">KZ02- JAWA BARAT
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 mb-20">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">KZ02- JAWA BARAT
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 mb-20">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">KZ02- JAWA BARAT
+                                            </label>
+                                        </div>
+                                    </div>
+        
+                                </div>
+                            </div>
+        
+                        </div>
+        
+                        <div class="modal-footer">
+                            <div class="row text-center">
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <script>
+        $(function () {
+
+
+            // Table setup
+            // ------------------------------
+
+            // Setting datatable defaults
+            $.extend($.fn.dataTable.defaults, {
+                columnDefs: [{
+                    // orderable: false,
+                    // width: '100px',
+                    // targets: [ 5 ]
+                }],
+                dom: '<"datatable-header"fl><"datatable-scroll datatable-scroll-wrap"t><"datatable-footer"ip>',
+                language: {
+                    search: '<span>Filter:</span> _INPUT_',
+                    lengthMenu: '<span>Show:</span> _MENU_',
+                    paginate: { 'first': 'First', 'last': 'Last', 'next': '&rarr;', 'previous': '&larr;' }
+                }
+            });
+
+
+            //
+            // Fixed column with complex headers
+            //
+
+            // Initialize
+            var table = $('.datatable-tipe-toko').DataTable({
+                autoWidth: false,
+                columnDefs: [
+                    {
+                        orderable: false,
+                        targets: [1, 3, 14]
+                    }
+                ],
+                scrollX: true,
+                scrollY: '350px',
+                scrollCollapse: true,
+                fixedColumns: false
+            });
+
+            // Adjust columns on window resize
+            setTimeout(function () {
+                $(window).on('resize', function () {
+                    table.columns.adjust();
+                });
+            }, 100);
+
+
+
+            // External table additions
+            // ------------------------------
+
+            // Add placeholder to the datatable filter option
+            $('.dataTables_filter input[type=search]').attr('placeholder', 'Type to filter...');
+
+
+            // Enable Select2 select for the length option
+            $('.dataTables_length select').select2({
+                minimumResultsForSearch: Infinity,
+                width: 'auto'
+            });
+
+        });
+
+        (function ($) {
+            $(function () {
+                $('.multi-select-dd').fSelect();
+            });
+        })(jQuery);
+    </script>
+
+</body>
+
+</html>
