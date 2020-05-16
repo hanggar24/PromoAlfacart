@@ -1,312 +1,1398 @@
-<style type="text/css">
-    .prl-5 {
-        padding-right: 5px;
-        padding-left: 5px;
+<style>
+    .container-flex {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-wrap: wrap;
     }
-
-    .prl-10 {
-        padding-right: 10px;
-        padding-left: 10px;
+    
+    .filter-gray {
+        filter: grayscale(100%);
     }
-
-    .col-xs-4 {
-        width: 33.33333333%;
-        float: left;
-    }
-
-    .no-padding {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .col-xs-2 {
-        width: 16.66666667%;
-        float: left;
-    }
-
-    .col-xs-6 {
-        width: 50%;
-        float: left;
-    }
-
-    .col-xs-3 {
-        width: 25%;
-        float: left;
-    }
-
-    .col-10 {
-        width: 10%;
-        position: relative;
-        float: left;
-    }
-
-    .img {
-        width: 100%;
-        height: auto;
-    }
-
-    a:hover {
-        text-decoration: none;
-    }
-
-    a>.img:hover {
-        opacity: 0.65;
-    }
-
-    #info-cicilan-btn {
-        display: block;
-        width: 100%;
-        text-align: center;
-        background: #E5E5E5;
-        color: #444444 !important;
-        padding: 10px 0;
-        font-size: 1.1em;
-        cursor: pointer;
-    }
-
-    #info-cicilan-box {
-        display: none;
-    }
-
-    #info-cicilan-box {
-        padding: 30px 40px;
-        background: #fbfbfb;
-        border: 1px solid #e4e4e4;
-    }
-
-    ul li {
-        font-style: normal;
-        font-weight: normal;
-    }
-
-    #info-cicilan-box ul li ul li {
-        list-style: circle;
-    }
-
-    .promo-title {
-        margin-top: 16px;
-        margin-bottom: 8px;
-        text-align: center;
-        font-weight: bold;
-        color: #000000 !important;
-    }
-
+    
     .no-margin {
-        margin: 0;
+        margin: 0px;
     }
-
+    
+    .mb-10 {
+        margin-bottom: 10px;
+    }
+    
+    .mt-10 {
+        margin-top: 10px;
+    }
+    
+    .nav-tabs {
+        background-color: #F9F9F9;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-bottom: none;
+    }
+    
+    .nav-tabs li {
+        font-weight: 500;
+    }
+    
+    .nav-tabs li a {
+        color: #989898;
+    }
+    
+    .nav-tabs li a:hover {
+        background: transparent;
+        border: none;
+    }
+    
+    .nav-tabs>li>a::after {
+        content: none;
+    }
+    
+    .nav-tabs>li.active>a,
+    .nav-tabs>li.active>a:focus,
+    .nav-tabs>li.active>a:hover {
+        color: #ED1C25 !important;
+        cursor: default;
+        background-color: transparent;
+        border: none;
+        border-bottom: solid 3px #ED1C25;
+    }
+    
+    .card-promo {
+        border: none;
+        box-shadow: 0 1px 6px #d8d8d8;
+    }
+    
     .no-padding {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
-
-    .mt-10 {
-        margin-top: 10px;
+    
+    .card-promo .panel-heading {
+        background: transparent;
+        padding: 0;
+        overflow: hidden;
+        border: none;
     }
-
-    .mb-10 {
-        margin-bottom: 10px;
+    
+    .card-promo .panel-body p {
+        border-bottom: solid 1px #dddddd;
+        color: #505050;
+        font-weight: 500;
+        margin: 0;
+        padding-bottom: 10px;
+        height: 45px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-height: 17px;
     }
-
-    .carousel-control {
-        top: 45% !important;
+    
+    .btn-cek-promo {
+        background-color: #ED1C25;
+        color: #ffffff;
+        border-radius: 4px;
     }
-
-    table {
-        width: 100%;
+    
+    .btn-cek-promo:hover {
+        color: #ffffff;
     }
-
-    table tr th {
-        text-align: center;
+    
+    .voucher-promo-code p {
+        border-bottom: none !important;
+        margin: 0 !important;
+        padding-bottom: 0 !important;
+        height: auto !important;
+        line-height: 14px !important;
     }
-
-    table tr th,
-    table tr td {
-        padding: 5px;
+    
+    .voucher-promo-code span {
+        font-size: 10px;
+        color: #848484;
     }
-
-    .carousel-control {
-        top: 45% !important;
-    }
-
-    @media (min-width: 768px) {
-
-        .carousel-control .glyphicon-chevron-left,
-        .carousel-control .glyphicon-chevron-right,
-        .carousel-control .icon-prev,
-        .carousel-control .icon-next {
-            margin-top: -15px !important;
-        }
-
-        .carousel-control .glyphicon-chevron-left,
-        .carousel-control .icon-prev {
-            margin-left: -15px !important;
-        }
-
-        .carousel-control .glyphicon-chevron-right,
-        .carousel-control .icon-next {
-            margin-right: -15px !important;
-        }
-    }
-
+    
     @media (max-width: 991px) {
-        .col-xs-4 {
-            width: 33.33333333%;
-            float: left;
+        .no-padding-sm {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        .no-margin-sm {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        .nav-tabs {
+            margin-top: 0px;
+        }
+        .nav-tabs li {
+            font-size: 13px;
+        }
+        .nav-tabs.nav-justified-sm li {
+            width: 50%;
+            text-align: center;
+        }
+        .nav-tabs.nav-justified-sm li a {
+            margin-right: 0px;
         }
     }
 </style>
-<div class="row m-0">
-    <div class="col-xs-12 plr-0 pb-5">
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active"><a data-cke-saved-href="https://www.alfacart.com/promo/unilever-diskon"
-                                href="https://www.alfacart.com/promo/unilever-diskon" target="_blank"
-                                mobile-link="alfacart://catalog/12568"><img class="img img-responsive "
-                                    data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/November/ADER5369-ULI-SIS.png"
-                                    src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/November/ADER5369-ULI-SIS.png">
-                            </a></div>
-    
-                            <div class="item "><a
-                                href="https://www.alfacart.com/promo/unilever-tebus-murah" target="_blank"
-                                mobile-link="alfacart://catalog/11090"><img class="img img-responsive "
-                                   
-                                    src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/November/2019/SIS-SIPULI-16NOV.png">
-                            </a></div>
-                    </div><a class="left carousel-control" data-cke-saved-href="#carousel-example-generic"
-                        href="#carousel-example-generic" data-slide="prev"><span
-                            class="glyphicon glyphicon-chevron-left p1">&nbsp;</span> </a> <a class="right carousel-control"
-                        data-cke-saved-href="#carousel-example-generic" href="#carousel-example-generic" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right p1">&nbsp;</span> </a>
+<div class="row no-margin">
+    <div class="col-sm-12 no-padding-sm">
+        <a data-cke-saved-href="https://www.alfacart.com/promo/groceries-great-sale" href="https://www.alfacart.com/promo/groceries-great-sale" target="_blank" mobile-link="alfacart://catalog/10031"><img class="img img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Februari/ADER5738-KAT-ALFA.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Februari/ADER5738-KAT-ALFA.png"> </a>
+    </div>
+</div>
+<div class="row no-margin">
+    <div class="col-sm-12 no-padding-sm">
+        <a data-cke-saved-href="https://www.alfacart.com/promo/aris4n" href="https://www.alfacart.com/promo/aris4n" target="_blank" mobile-link="alfacart://catalog/13022"><img class="img img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6464LP_Header-1.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6464LP_Header-1.png">            </a>
+    </div>
+</div>
+<div class="row no-margin">
+    <div class="col-sm-12 no-padding-sm">
+        <a data-cke-saved-href="https://www.alfacart.com/promo/aris4n" href="https://www.alfacart.com/promo/aris4n" target="_blank" mobile-link="alfacart://catalog/13022"><img class="img img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6464LP-SK-HADIAH.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6464LP-SK-HADIAH.png">
+        </a>
+    </div>
+</div>
+<div class="row no-margin">
+    <div class="col-sm-12 no-padding-sm">
+        <a data-cke-saved-href="https://www.alfacart.com/promo/belanjadarirumahaja" href="https://www.alfacart.com/promo/belanjadarirumahaja" target="_blank" mobile-link="alfacart://catalog/13072"><img class="img img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6464-FOOT-REV.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6464-FOOT-REV.png"> </a>
+    </div>
+</div>
+<div class="row no-margin mt-10">
+    <div class="col-sm-12 no-padding-sm">
+        <a data-cke-saved-href="https://www.alfacart.com/promo/akulaku" href="https://www.alfacart.com/promo/akulaku" target="_blank" mobile-link="alfacart://catalog/11290"><img class="img img-responsive" style="width: 100%;" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/BANNERPANJANGNEWAKULAKU501.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/BANNERPANJANGNEWAKULAKU501.png">
+        </a>
+    </div>
+</div>
+<div class="row no-margin">
+    <div class="col-sm-12 no-padding-sm">
+        <ul class="nav nav-tabs nav-justified-sm" role="tablist">
+            <li role="presentation" class="active"><a data-cke-saved-href="#specialOffer" href="#specialOffer" aria-controls="specialOffer" role="tab" data-toggle="tab" aria-expanded="true">Special Offer</a>
+            </li>
+            <li role="presentation" class=""><a data-cke-saved-href="#promoCategories" href="#promoCategories" aria-controls="promoCategories" role="tab" data-toggle="tab" aria-expanded="false">Promo by
+                    Categories</a></li>
+        </ul>
+    </div>
+</div>
+<div class="row no-margin">
+    <div class="col-sm-12 no-padding-sm">
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="specialOffer">
+                <div class="row no-margin-sm">
+                    <div class="container-flex">
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/zwitsal-fair" href="https://www.alfacart.com/promo/zwitsal-fair" target="_blank" mobile-link="alfacart://catalog/13080"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6518-HEADER-APPS.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6518-HEADER-APPS.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Potongan RP 10.000 Khusus Produk Zwitsal</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/zwitsal-fair" href="https://www.alfacart.com/promo/zwitsal-fair" target="_blank" mobile-link="alfacart://catalog/13080">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/psm" href="https://www.alfacart.com/promo/psm" target="_blank" mobile-link="alfacart://catalog/13016"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER655-HAPS-1.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER655-HAPS-1.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Tebus Murah Mulai 5ribuan</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/psm" href="https://www.alfacart.com/promo/psm" target="_blank" mobile-link="alfacart://catalog/13016">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-heading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/paket-ramadhan" href="https://www.alfacart.com/promo/paket-ramadhan" target="_blank" mobile-link="alfacart://catalog/13175"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6538-HAPS.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6538-HAPS.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Paket Ramadhan Harga Spesial Mulai 8ribuan</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/paket-ramadhan" href="https://www.alfacart.com/promo/paket-ramadhan" target="_blank" mobile-link="alfacart://catalog/13175">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-heading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/cemilan-free-fanta" href="https://www.alfacart.com/promo/cemilan-free-fanta" target="_blank" mobile-link="alfacart://catalog/13030"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6523-header-apps.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6523-header-apps.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Gratis 1pc FANTA Stroberi 250ml setiap beli snack 10rb</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/cemilan-free-fanta" href="https://www.alfacart.com/promo/cemilan-free-fanta" target="_blank" mobile-link="alfacart://catalog/13030">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/nestle-nutrition" href="https://www.alfacart.com/promo/nestle-nutrition" target="_blank" mobile-link="alfacart://catalog/13187"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6536-HEADER-APPS.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6536-HEADER-APPS.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Potongan Langsung Rp 12.000 Khusus Produk Nestle</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/nestle-nutrition" href="https://www.alfacart.com/promo/nestle-nutrition" target="_blank" mobile-link="alfacart://catalog/13187">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/nestle-fortigro" href="https://www.alfacart.com/promo/nestle-fortigro" target="_blank" mobile-link="alfacart://catalog/13140"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/6552-HAPS-FG.png.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/6552-HAPS-FG.png.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Dapat Hadiah dari Dancow FortiGro</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/nestle-fortigro" href="https://www.alfacart.com/promo/nestle-fortigro" target="_blank" mobile-link="alfacart://catalog/13140">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/sellerspecial" href="https://www.alfacart.com/promo/sellerspecial" target="_blank" mobile-link="alfacart://catalog/13120"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/SellerDeals_Mobile Header_apps.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/SellerDeals_Mobile Header_apps.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Potongan Voucher Sampai Rp 100.000</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/sellerspecial" href="https://www.alfacart.com/promo/sellerspecial" target="_blank" mobile-link="alfacart://catalog/13120">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/stayawayvirus" href="https://www.alfacart.com/promo/stayawayvirus" target="_blank" mobile-link="alfacart://catalog/13157"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/headerapps_avelca.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/headerapps_avelca.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Masker &amp; Handsanitizer Harga Promo</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/stayawayvirus" href="https://www.alfacart.com/promo/stayawayvirus" target="_blank" mobile-link="alfacart://catalog/13157">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/xl-prioflex" href="https://www.alfacart.com/promo/xl-prioflex" target="_blank" mobile-link="alfacart://catalog/13190"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/aps_fprioflex.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/aps_fprioflex.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Isi Pulsa Bonus Kuota 5GB</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/xl-prioflex" href="https://www.alfacart.com/promo/xl-prioflex" target="_blank" mobile-link="alfacart://catalog/13190">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/bca-ramadhan" href="https://www.alfacart.com/promo/bca-ramadhan" target="_blank" mobile-link="alfacart://catalog/13188"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/HEADERAPP-BCARMDN-APRIL1.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/HEADERAPP-BCARMDN-APRIL1.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Diskon hingga Rp 100.000 khusus Ramadhan dengan BCA</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span>Kode Vocuher : </span>
+                                                <p>BCAGRO5, BCAGAD5</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/bca-ramadhan" href="https://www.alfacart.com/promo/bca-ramadhan" target="_blank" mobile-link="alfacart://catalog/13188">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/blueband" href="https://www.alfacart.com/promo/blueband" target="_blank" mobile-link="alfacart://catalog/13061"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/HAPPS-BB-APR1.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/HAPPS-BB-APR1.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Beli 2 Gratis 1 Blue Band Rice Mix</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/blueband" href="https://www.alfacart.com/promo/blueband" target="_blank" mobile-link="alfacart://catalog/13061">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/gingerbon" href="https://www.alfacart.com/promo/gingerbon" target="_blank" mobile-link="alfacart://catalog/13191"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/HAPPS-GB-APR.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/HAPPS-GB-APR.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Beli 2 Gratis 1 Gingerbon</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/gingerbon" href="https://www.alfacart.com/promo/gingerbon" target="_blank" mobile-link="alfacart://catalog/13191">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/gopay" href="https://www.alfacart.com/promo/gopay" target="_blank" mobile-link="alfacart://catalog/11373"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/HEADERAPP-GPYRMDN-APRIL.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/HEADERAPP-GPYRMDN-APRIL.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Extra potongan 50% pakai GoPay</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span>Kode Vocuher : </span>
+                                                <p>GOPAYRMDN</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/gopay" href="https://www.alfacart.com/promo/gopay" target="_blank" mobile-link="alfacart://catalog/11373">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/coca-cola" href="https://www.alfacart.com/promo/coca-cola" target="_blank" mobile-link="alfacart://catalog/11763"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6472-HEADER-APPS.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6472-HEADER-APPS.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Potongan Langsung 10%</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/coca-cola" href="https://www.alfacart.com/promo/coca-cola" target="_blank" mobile-link="alfacart://catalog/11763">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-heading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/thr-nestle" href="https://www.alfacart.com/promo/thr-nestle" target="_blank" mobile-link="alfacart://catalog/13145"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6471-HEADER-APPS-2.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6471-HEADER-APPS-2.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Dapatkan THR dari Nestle Saldo GoPay Rp 100.000</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/thr-nestle" href="https://www.alfacart.com/promo/thr-nestle" target="_blank" mobile-link="alfacart://catalog/13145">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/bintangraya-sale" href="https://www.alfacart.com/promo/bintangraya-sale" target="_blank" mobile-link="alfacart://catalog/13105"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/BRS_APPS.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/BRS_APPS.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Potongan Rp 50.000 Untuk Produk Handphone</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span>Kode Vocuher : </span>
+                                                <p>HPAPRIL50</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/bintangraya-sale" href="https://www.alfacart.com/promo/bintangraya-sale" target="_blank" mobile-link="alfacart://catalog/13105">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-heading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/mondelez-snack" href="https://www.alfacart.com/promo/mondelez-snack" target="_blank" mobile-link="alfacart://catalog/13079"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6315-HAPS.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6315-HAPS.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Diskon 20% Maks. Potongan Rp 20.000</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span>Kode Voucher : </span>
+                                                <p>JAJANMONDELEZ</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/mondelez-snack" href="https://www.alfacart.com/promo/mondelez-snack" target="_blank" mobile-link="alfacart://catalog/13079">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/bukopin-daily" href="https://www.alfacart.com/promo/bukopin-daily" target="_blank" mobile-link="alfacart://catalog/13132"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/HEADERAPP-BKPNGO30-APRIL.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/HEADERAPP-BKPNGO30-APRIL.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Extra potongan Rp 30.000 pakai Kartu Kredit Bukopin</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span>Kode Vocuher : </span>
+                                                <p>BKPNGO30</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/bukopin-daily" href="https://www.alfacart.com/promo/bukopin-daily" target="_blank" mobile-link="alfacart://catalog/13132">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/frisian-flag-fair" href="https://www.alfacart.com/promo/frisian-flag-fair" target="_blank" mobile-link="alfacart://catalog/10177"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6392-HAPS-REV.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6392-HAPS-REV.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Potongan Rp 10.000 Beli Produk FFI Min. Rp 100.000</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span>Kode Vocuher : </span>
+                                                <p>FFISEHAT</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/frisian-flag-fair" href="https://www.alfacart.com/promo/frisian-flag-fair" target="_blank" mobile-link="alfacart://catalog/10177">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/panadol" href="https://www.alfacart.com/promo/panadol" target="_blank" mobile-link="alfacart://catalog/13111"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HAPPS-PANADOL.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HAPPS-PANADOL.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Panadol Obat Andalan Keluarga</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/panadol" href="https://www.alfacart.com/promo/panadol" target="_blank" mobile-link="alfacart://catalog/13111">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/palinglaris" href="https://www.alfacart.com/promo/palinglaris" target="_blank" mobile-link="alfacart://catalog/13119"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HAPPS-PL-SP-GP.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HAPPS-PL-SP-GP.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Produk Pilihan PALING LARIS</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/palinglaris" href="https://www.alfacart.com/promo/palinglaris" target="_blank" mobile-link="alfacart://catalog/13119">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/sis-enesis" href="https://www.alfacart.com/promo/sis-enesis" target="_blank" mobile-link="alfacart://catalog/11138"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/ADER6428-HEADER-APPS.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/ADER6428-HEADER-APPS.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Potongan Rp 10.000 Produk Enesis</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span>Kode Vocuher :</span>
+                                                <p>ENESISMAGIC</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/sis-enesis" href="https://www.alfacart.com/promo/sis-enesis" target="_blank" mobile-link="alfacart://catalog/11138">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/sis-sasa" href="https://www.alfacart.com/promo/sis-sasa" target="_blank" mobile-link="alfacart://catalog/12011"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/ADER6391-HEADER-APPS.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/ADER6391-HEADER-APPS.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Potongan Langsung Rp 10.000 Produk Sasa</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/sis-sasa" href="https://www.alfacart.com/promo/sis-sasa" target="_blank" mobile-link="alfacart://catalog/12011">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="http://www.alfacart.com/promo/uob" href="http://www.alfacart.com/promo/uob" target="_blank" mobile-link="alfacart://catalog/11986"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HEADERAPP-HEMATUOB4-APRIL.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HEADERAPP-HEMATUOB4-APRIL.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Diskon hingga Rp 50.000 dengan Kartu Kredit UOB</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span>Kode Vocuher : </span>
+                                                <p>HEMATUOB4</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="http://www.alfacart.com/promo/uob" href="http://www.alfacart.com/promo/uob" target="_blank" mobile-link="alfacart://catalog/11986">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/akulaku" href="https://www.alfacart.com/promo/akulaku" target="_blank" mobile-link="alfacart://catalog/11290"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/HEADERAPP-NEWAKULAKU501.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/HEADERAPP-NEWAKULAKU501.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Extra Potongan 50% pakai Akulaku setiap hari</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span>Kode Vocuher :</span>
+                                                <p>AKULAKU, AKULAKUNEW</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/akulaku" href="https://www.alfacart.com/promo/akulaku" target="_blank" mobile-link="alfacart://catalog/11290">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/dettol" href="https://www.alfacart.com/promo/dettol" target="_blank" mobile-link="alfacart://catalog/10978"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/ADER6369-HEADER-APPS.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/ADER6369-HEADER-APPS.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Potongan Rp 10.000 Semua Produk Dettol</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span>Kode Vocuher : </span>
+                                                <p>DTLBDWSH</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/dettol" href="https://www.alfacart.com/promo/dettol" target="_blank" mobile-link="alfacart://catalog/10978">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/unilever-deals-corner" href="https://www.alfacart.com/promo/unilever-deals-corner" target="_blank" mobile-link="alfacart://catalog/10032"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HAPPS-APR-ULI .png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HAPPS-APR-ULI .png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Unilever Diskon Hingga 30%</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/unilever-deals-corner" href="https://www.alfacart.com/promo/unilever-deals-corner" target="_blank" mobile-link="alfacart://catalog/10032">Cek Promo</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/baygon-fair" href="https://www.alfacart.com/promo/baygon-fair" target="_blank" mobile-link="alfacart://catalog/13029"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6450-HEADER-APPS-REV.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/ADER6450-HEADER-APPS-REV.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Potongan Rp 10.000 Belanja Baygon Min. Rp 50.000</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/baygon-fair" href="https://www.alfacart.com/promo/baygon-fair" target="_blank" mobile-link="alfacart://catalog/13029">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/pinkberry" href="https://www.alfacart.com/promo/pinkberry" target="_blank" mobile-link="alfacart://catalog/12822"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/ADER6396-HEADER-apps.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/ADER6396-HEADER-apps.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Potongan Rp 5.000 Setiap Beli PinkBerry min. Rp 40.000</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span>Kode Voucher : </span>
+                                                <p>PINKBERRY5</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/pinkberry" href="https://www.alfacart.com/promo/pinkberry" target="_blank" mobile-link="alfacart://catalog/12822">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/colgate-palmolive" href="https://www.alfacart.com/promo/colgate-palmolive" target="_blank" mobile-link="alfacart://catalog/12438"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/ADER6393-HEADER-APPS.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/ADER6393-HEADER-APPS.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Potongan Rp 10.000 Min. Belanja Rp 50.000 CP</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span>Kode Voucher : </span>
+                                                <p>COLGATEDAY</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/colgate-palmolive" href="https://www.alfacart.com/promo/colgate-palmolive" target="_blank" mobile-link="alfacart://catalog/12438">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/wardah-fair" href="https://www.alfacart.com/promo/wardah-fair" target="_blank" mobile-link="alfacart://catalog/12835"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/ADER6357-HAPS-REV.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/ADER6357-HAPS-REV.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Potongan Rp 10.000 Min. Belanja Rp 40.000</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span>Kode Voucher : </span>
+                                                <p>NATURE10</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/wardah-fair" href="https://www.alfacart.com/promo/wardah-fair" target="_blank" mobile-link="alfacart://catalog/12835">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/kapalapi" href="https://www.alfacart.com/promo/kapalapi" target="_blank" mobile-link="alfacart://catalog/13108"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HAPPS-KPL-API.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HAPPS-KPL-API.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Harga Spesial Khusus Kopi Kapal Api</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/kapalapi" href="https://www.alfacart.com/promo/kapalapi" target="_blank" mobile-link="alfacart://catalog/13108">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-heading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/promo-linkaja" href="https://www.alfacart.com/promo/promo-linkaja" target="_blank" mobile-link="alfacart://catalog/11950"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HEADERAPP-LINKAJAREG-APRIL.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HEADERAPP-LINKAJAREG-APRIL.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Cashback 10% setiap hari pakai LinkAja</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/promo-linkaja" href="https://www.alfacart.com/promo/promo-linkaja" target="_blank" mobile-link="alfacart://catalog/11950">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-heading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/permata" href="https://www.alfacart.com/promo/permata" target="_blank" mobile-link="alfacart://catalog/11311"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/HEADERAPP-NEWPERMATA-APRIL.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/HEADERAPP-NEWPERMATA-APRIL.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Extra Potongan Rp 15.000 pakai Kartu Kredit Permata</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span>Kode Voucher :</span>
+                                                <p>ALFAPERMATA15K</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/permata" href="https://www.alfacart.com/promo/permata" target="_blank" mobile-link="alfacart://catalog/11311">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-heading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/promo-rekpon" href="https://www.alfacart.com/promo/promo-rekpon" target="_blank" mobile-link="alfacart://catalog/10286"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HEADERAPP-ULIDAYXGPYR-25MAR.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HEADERAPP-REKPON20-MARET.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Extra potongan 20% pakai Rekening Ponsel</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span>Kode Voucher :</span>
+                                                <p>CIMBNIAGA</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/promo-rekpon" href="https://www.alfacart.com/promo/promo-rekpon" target="_blank" mobile-link="alfacart://catalog/10286">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-heading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/nutricia-sarihusada" href="https://www.alfacart.com/promo/nutricia-sarihusada" target="_blank" mobile-link="alfacart://catalog/11999"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/ADER6331-HEADER-APPS.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/ADER6331-HEADER-APPS.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Beli 2 Gratis 1 Hadiah</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/nutricia-sarihusada" href="https://www.alfacart.com/promo/nutricia-sarihusada" target="_blank" mobile-link="alfacart://catalog/11999">Cek Promo</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-heading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/epaybri" href="https://www.alfacart.com/promo/epaybri" target="_blank" mobile-link="alfacart://catalog/11445"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HEADERAPP-HEBRI-17MARrev.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HEADERAPP-HEBRI-17MARrev.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Potongan Rp 30.000 dengan E-Pay BRI</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span>Kode Vocuher : </span>
+                                                <p>HEMATBRI</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/epaybri" href="https://www.alfacart.com/promo/epaybri" target="_blank" mobile-link="alfacart://catalog/11445">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-heading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/waspada-virus" href="https://www.alfacart.com/promo/waspada-virus" target="_blank" mobile-link="alfacart://catalog/13027"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HAPS-WASVIR-MAR.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Maret/2020/HAPS-WASVIR-MAR.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Waspada Virus &amp; Bakteri Lindungi Diri Anda</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/waspada-virus" href="https://www.alfacart.com/promo/waspada-virus" target="_blank" mobile-link="alfacart://catalog/13027">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-heading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/temen-nongkrong" href="https://www.alfacart.com/promo/temen-nongkrong" target="_blank" mobile-link="alfacart://catalog/12997"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Februari/2020/HAPS-TN-FEB-P2.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Februari/2020/HAPS-TN-FEB-P2.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Cemilan Buat Temen Nongkrong Mulai 2ribuan</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/temen-nongkrong" href="https://www.alfacart.com/promo/temen-nongkrong" target="_blank" mobile-link="alfacart://catalog/12997">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-heading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/minyak-goreng" href="https://www.alfacart.com/promo/minyak-goreng" target="_blank" mobile-link="alfacart://catalog/12275"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Januari/2020/ADER5793header-apps.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Januari/2020/ADER5793header-apps.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Promo Minyak Goreng Mulai Dari 15ribuan</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/minyak-goreng" href="https://www.alfacart.com/promo/minyak-goreng" target="_blank" mobile-link="alfacart://catalog/12275">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-heading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/alfabrand" href="https://www.alfacart.com/promo/alfabrand" target="_blank" mobile-link="alfacart://catalog/11671"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Januari/2020/ADER5788-header-apps.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Januari/2020/ADER5788-header-apps.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Produk Label Alfamart Diskon s.d 25%</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/alfabrand" href="https://www.alfacart.com/promo/alfabrand" target="_blank" mobile-link="alfacart://catalog/11671">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-heading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/sis-wings" href="https://www.alfacart.com/promo/sis-wings" target="_blank" mobile-link="alfacart://catalog/11293"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Januari/HAPPS-WINGS-JAN20.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Januari/HAPPS-WINGS-JAN20.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Produk Wings Diskon Hemat s.d 40%</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/sis-wings" href="https://www.alfacart.com/promo/sis-wings" target="_blank" mobile-link="alfacart://catalog/11293">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-heading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/hotwheels" href="https://www.alfacart.com/promo/hotwheels" target="_blank" mobile-link="alfacart://catalog/11670"><img class="img-responsive" data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Januari/2019/HAPPS-HOTWHEELS-JAN20.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Januari/2019/HAPPS-HOTWHEELS-JAN20.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Hot Wheels Buy 1 Get 1</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/hotwheels" href="https://www.alfacart.com/promo/hotwheels" target="_blank" mobile-link="alfacart://catalog/11670">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-heading">
+                                    <a data-cke-saved-href="https://www.alfacart.com/promo/groceries-great-sale" href="https://www.alfacart.com/promo/groceries-great-sale" target="_blank" mobile-link="alfacart://catalog/10031"><img data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/promo/ADER-3238%20Alfamart%20Vaganza%20New_MOBILE.png" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/promo/ADER-3238%20Alfamart%20Vaganza%20New_MOBILE.png"
+                                            class="img-responsive"> </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Promo Groceries Great Sale, Belanja Bulanan Termurah</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code">
+                                                <p><br></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" data-cke-saved-href="https://www.alfacart.com/promo/groceries-great-sale" href="https://www.alfacart.com/promo/groceries-great-sale" target="_blank" mobile-link="alfacart://catalog/10031">Cek Promo</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="promoCategories">
+                <div class="row no-margin-sm">
+                    <div class="container-flex">
+
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/elektronik-bukber" target="_blank" mobile-link="alfacart://catalog/13183"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdrapps_4626.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p> Peralatan Masak untuk Bukber dan Sahur</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/elektronik-bukber" target="_blank" mobile-link="alfacart://catalog/13183">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/workfromhome" target="_blank" mobile-link="alfacart://catalog/13098"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/headerapps_202.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p> Work From Home Tanpa Batasan</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/workfromhome" target="_blank" mobile-link="alfacart://catalog/13098">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/nescafedalgona" target="_blank" mobile-link="alfacart://catalog/13162"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdr_apps_6499.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Bikin Kopi Kekinain Nescafe Dalgona</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/nescafedalgona" target="_blank" mobile-link="alfacart://catalog/13162">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/joyday-icecream" target="_blank" mobile-link="alfacart://catalog/13164"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdr_apps_6508.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p> Nikmati Joyday Ice Cream #DiRumahAja</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/joyday-icecream" target="_blank" mobile-link="alfacart://catalog/13164">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/snackandchill" target="_blank" mobile-link="alfacart://catalog/13165"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdr_apps_6510.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p> Snack & Chill Selama #DiRumahAja</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/snackandchill" target="_blank" mobile-link="alfacart://catalog/13165">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/gadgetholic" target="_blank" mobile-link="alfacart://catalog/13182"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdr_apps_2545.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Buat Kamu si Gadget Holic</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/gadgetholic" target="_blank" mobile-link="alfacart://catalog/13182">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/gantioili" target="_blank" mobile-link="alfacart://catalog/13185"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdr_apps_6545.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Perawatan Oli Terbaik untuk Kendaraanmu</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/gantioili" target="_blank" mobile-link="alfacart://catalog/13185">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/babyneeds" target="_blank" mobile-link="alfacart://catalog/13181"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdrapps_4451.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Kebutuhan Baby & Kids Online Terbaik</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/babyneeds" target="_blank" mobile-link="alfacart://catalog/13181">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/hotwheels" target="_blank" mobile-link="alfacart://catalog/11670"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdrapps_4453.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p> Hot Wheels Limited Edition</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/hotwheels" target="_blank" mobile-link="alfacart://catalog/11670">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/orami" target="_blank" mobile-link="alfacart://catalog/13179"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdrapps_orami.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p> ORAMI Produk Launching!</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/orami" target="_blank" mobile-link="alfacart://catalog/13179">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/wyethfair" target="_blank" mobile-link="alfacart://catalog/13177"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdr_apps_wyeth_01.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p> Wyeth Fair Potongan Langsung Rp 25.000</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/wyethfair" target="_blank" mobile-link="alfacart://catalog/13177">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/zwitsalbaby" target="_blank" mobile-link="alfacart://catalog/13178"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdrpapps_4230.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p> Zwitsal Fair Potongan Langsung Rp 10.000</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/zwitsalbaby" target="_blank" mobile-link="alfacart://catalog/13178">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/living-ramadhan" target="_blank" mobile-link="alfacart://catalog/13167"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdr_apps_6511.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Siap-Siap Beli Perabotan Ramadhan</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/living-ramadhan" target="_blank" mobile-link="alfacart://catalog/13167">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/hygine-product" target="_blank" mobile-link="alfacart://catalog/13169"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdr_apps_6513.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p> Stay Away From Virus</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/hygine-product" target="_blank" mobile-link="alfacart://catalog/13169">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/bersih-ramadhan" target="_blank" mobile-link="alfacart://catalog/13168"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdr_apps_ader6512.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Bersih-Bersih Sambut Ramadhan</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/bersih-ramadhan" target="_blank" mobile-link="alfacart://catalog/13168">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/rumahbersihsehat" target="_blank" mobile-link="alfacart://catalog/13166"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdr_apps_6535.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Rumah Bersih Sehat Jauh dari Kuman</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/rumahbersihsehat" target="_blank" mobile-link="alfacart://catalog/13166">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/sleep-home" target="_blank" mobile-link="alfacart://catalog/13170"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdr_apps_6514.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Nyaman Tidur dengan Bantal dan Guling Terbaik</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/sleep-home" target="_blank" mobile-link="alfacart://catalog/13170">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-lg-4">
+                            <div class="panel panel-default card-promo">
+                                <div class="panel-ading">
+                                    <a href="https://www.alfacart.com/promo/voucherbelanjamurah" target="_blank" mobile-link="alfacart://catalog/13060"><img class="img-responsive" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/April/2020/hdr_apps_6545.png">
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Voucher Murah 2020</p>
+                                    <div class="row mt-10">
+                                        <div class="col-xs-6 col-sm-6 col-lg-7">
+                                            <div class="voucher-promo-code"><span></span>
+                                                <p> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-lg-5"><a class="btn btn-block btn-cek-promo" href="https://www.alfacart.com/promo/voucherbelanjamurah" target="_blank" mobile-link="alfacart://catalog/13060">Cek Promo</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<div class="row m-0">
-    <div class="col-xs-6 plr-5"><a data-cke-saved-href="https://www.alfacart.com/promo/promo-langganan-unilever"
-            href="https://www.alfacart.com/promo/promo-langganan-unilever" mobile-link="alfacart://catalog/10216"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-1-REV.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-1-REV.png"
-                class="btn-block"> </a></div>
-    <div class="col-xs-6 plr-5"><a data-cke-saved-href="https://www.alfacart.com/promo/unilever-bulanan"
-            href="https://www.alfacart.com/promo/unilever-bulanan" mobile-link="alfacart://catalog/11328"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-2.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-2.png"
-                class="btn-block"> </a></div>
-</div>
-<h4 class="text-center">SHOP MORE</h4>
-<div class="row m-0">
-    <div class="col-xs-3 plr-5"><a data-cke-saved-href="https://www.alfacart.com/promo/unilever-home-cleaning"
-            href="https://www.alfacart.com/promo/unilever-home-cleaning" mobile-link="alfacart://catalog/10149"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-3-HC.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-3-HC.png"
-                class="btn-block"> </a></div>
-    <div class="col-xs-3 plr-5"><a data-cke-saved-href="https://www.alfacart.com/promo/unilever-personal-care"
-            href="https://www.alfacart.com/promo/unilever-personal-care" mobile-link="alfacart://catalog/10148"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-4-PC.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-4-PC.png"
-                class="btn-block"> </a></div>
-    <div class="col-xs-3 plr-5"><a data-cke-saved-href="https://www.alfacart.com/promo/unilever-baby-care"
-            href="https://www.alfacart.com/promo/unilever-baby-care" mobile-link="alfacart://catalog/10147"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-5-BK.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-5-BK.png"
-                class="btn-block"> </a></div>
-    <div class="col-xs-3 plr-5"><a data-cke-saved-href="https://www.alfacart.com/promo/unilever-food-and-drinks"
-            href="https://www.alfacart.com/promo/unilever-food-and-drinks" mobile-link="alfacart://catalog/10146"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-6-FB.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-6-FB.png"
-                class="btn-block"> </a></div>
-</div>
-<div class="row m-0">
-    <h4 class="text-center">SHOP BY BRAND</h4>
-    <div class="col-xs-12 plr-0">
-        <table class="btn-block bg-grey cke_show_border">
-            <tbody>
-                <tr>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/BANGO"
-                            href="https://www.alfacart.com/brands/BANGO"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Bango.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Bango.png"
-                                class="img-responsive"> </a></td>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/Royco"
-                            href="https://www.alfacart.com/brands/Royco"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Royco.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Royco.png"
-                                class="img-responsive"> </a></td>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/SariWangi"
-                            href="https://www.alfacart.com/brands/SariWangi"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Sariwangi.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Sariwangi.png"
-                                class="img-responsive"> </a></td>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/Sunlight"
-                            href="https://www.alfacart.com/brands/Sunlight"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Sunlight.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Sunlight.png"
-                                class="img-responsive"> </a></td>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/Molto"
-                            href="https://www.alfacart.com/brands/Molto"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Molto.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Molto.png"
-                                class="img-responsive"> </a></td>
-                </tr>
-                <tr>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/Rinso"
-                            href="https://www.alfacart.com/brands/Rinso"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Rinso.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Rinso.png"
-                                class="img-responsive"> </a></td>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/Citra"
-                            href="https://www.alfacart.com/brands/Citra"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Citra.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Citra.png"
-                                class="img-responsive"> </a></td>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/Pepsodent"
-                            href="https://www.alfacart.com/brands/Pepsodent"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Pepsodent.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Pepsodent.png"
-                                class="img-responsive"> </a></td>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/Pond's"
-                            href="https://www.alfacart.com/brands/Pond's"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Ponds.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Ponds.png"
-                                class="img-responsive"> </a></td>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/CLEAR"
-                            href="https://www.alfacart.com/brands/CLEAR"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Clear.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Clear.png"
-                                class="img-responsive"> </a></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-<h4 class="text-center">WHAT'S NEW</h4>
-<div class="row m-0">
-    <div class="col-xs-12 plr-0"><iframe width="100%" height="180"
-            src="https://www.youtube.com/embed/iav4_qCsoJA?list=PLRB7xYcbk-PyoMjxAECYxqiL9Xha9Nkfs" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-    </div>
-</div>
-<h4 class="text-center">SUPER DEALS</h4>
-<div class="row m-0">
-    <div class="col-xs-6 no-padding"><a data-cke-saved-href="https://www.alfacart.com/promo/pesta-diskon-unilever-bango"
-            href="https://www.alfacart.com/promo/pesta-diskon-unilever-bango"
-            mobile-link="alfacart://catalog/10410"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/juli/2019/B5.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/juli/2019/B5.png"
-                class="img-responsive btn-block"> </a></div>
-    <div class="col-xs-6 no-padding "><a data-cke-saved-href="https://www.alfacart.com/promo/pepsodent"
-            href="https://www.alfacart.com/promo/pepsodent" mobile-link="alfacart://catalog/10587"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/juli/2019/B3.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/juli/2019/B3.png"
-                class="img-responsive btn-block"> </a></div>
-    <div class="col-xs-6 no-padding"><a data-cke-saved-href="https://www.alfacart.com/promo/unilever-sunlight"
-            href="https://www.alfacart.com/promo/unilever-sunlight" mobile-link="alfacart://catalog/10282"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/juli/2019/B6.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/juli/2019/B6.png"
-                class="img-responsive btn-block"> </a></div>
-    <div class="col-xs-6 no-padding"><a data-cke-saved-href="https://www.alfacart.com/promo/rexona"
-            href="https://www.alfacart.com/promo/rexona" mobile-link="alfacart://catalog/10575"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/juli/2019/B11.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/juli/2019/B11.png"
-                class="img-responsive btn-block"> </a></div>
 </div>

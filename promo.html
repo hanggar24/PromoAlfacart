@@ -1,319 +1,169 @@
-<style type="text/css">
-    .prl-5 {
-        padding-right: 5px;
-        padding-left: 5px;
+<style>
+    .container-flex {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-wrap: wrap;
     }
-
-    .prl-10 {
-        padding-right: 10px;
-        padding-left: 10px;
+    
+    .filter-gray {
+        filter: grayscale(100%);
     }
-
-    .col-xs-4 {
-        width: 33.33333333%;
-        float: left;
-    }
-
-    .no-padding {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .col-xs-2 {
-        width: 16.66666667%;
-        float: left;
-    }
-
-    .col-xs-6 {
-        width: 50%;
-        float: left;
-    }
-
-    .col-xs-3 {
-        width: 25%;
-        float: left;
-    }
-
-    .col-10 {
-        width: 10%;
-        position: relative;
-        float: left;
-    }
-
-    .img {
-        width: 100%;
-        height: auto;
-    }
-
-    a:hover {
-        text-decoration: none;
-    }
-
-    a>.img:hover {
-        opacity: 0.65;
-    }
-
-    #info-cicilan-btn {
-        display: block;
-        width: 100%;
-        text-align: center;
-        background: #E5E5E5;
-        color: #444444 !important;
-        padding: 10px 0;
-        font-size: 1.1em;
-        cursor: pointer;
-    }
-
-    #info-cicilan-box {
-        display: none;
-    }
-
-    #info-cicilan-box {
-        padding: 30px 40px;
-        background: #fbfbfb;
-        border: 1px solid #e4e4e4;
-    }
-
-    ul li {
-        font-style: normal;
-        font-weight: normal;
-    }
-
-    #info-cicilan-box ul li ul li {
-        list-style: circle;
-    }
-
-    .promo-title {
-        margin-top: 16px;
-        margin-bottom: 8px;
-        text-align: center;
-        font-weight: bold;
-        color: #000000 !important;
-    }
-
+    
     .no-margin {
-        margin: 0;
+        margin: 0px;
     }
-
+    
+    .mb-10 {
+        margin-bottom: 10px;
+    }
+    
+    .mt-10 {
+        margin-top: 10px;
+    }
+    
+    .nav-tabs {
+        background-color: #F9F9F9;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-bottom: none;
+    }
+    
+    .nav-tabs li {
+        font-weight: 500;
+    }
+    
+    .nav-tabs li a {
+        color: #989898;
+    }
+    
+    .nav-tabs li a:hover {
+        background: transparent;
+        border: none;
+    }
+    
+    .nav-tabs>li>a::after {
+        content: none;
+    }
+    
+    .nav-tabs>li.active>a,
+    .nav-tabs>li.active>a:focus,
+    .nav-tabs>li.active>a:hover {
+        color: #ED1C25 !important;
+        cursor: default;
+        background-color: transparent;
+        border: none;
+        border-bottom: solid 3px #ED1C25;
+    }
+    
+    .card-promo {
+        border: none;
+        box-shadow: 0 1px 6px #d8d8d8;
+    }
+    
     .no-padding {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
-
-    .mt-10 {
-        margin-top: 10px;
+    
+    .card-promo .panel-heading {
+        background: transparent;
+        padding: 0;
+        overflow: hidden;
+        border: none;
     }
-
-    .mb-10 {
-        margin-bottom: 10px;
+    
+    .card-promo .panel-body p {
+        border-bottom: solid 1px #dddddd;
+        color: #505050;
+        font-weight: 500;
+        margin: 0;
+        padding-bottom: 10px;
+        height: 45px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-height: 17px;
     }
-
-    .carousel-control {
-        top: 45% !important;
+    
+    .btn-cek-promo {
+        background-color: #ED1C25;
+        color: #ffffff;
+        border-radius: 4px;
     }
-
-    table {
-        width: 100%;
+    
+    .btn-cek-promo:hover {
+        color: #ffffff;
     }
-
-    table tr th {
-        text-align: center;
+    
+    .voucher-promo-code p {
+        border-bottom: none !important;
+        margin: 0 !important;
+        padding-bottom: 0 !important;
+        height: auto !important;
+        line-height: 14px !important;
     }
-
-    table tr th,
-    table tr td {
-        padding: 5px;
+    
+    .voucher-promo-code span {
+        font-size: 10px;
+        color: #848484;
     }
-
-    .carousel-control {
-        top: 45% !important;
-    }
-
-    @media (min-width: 768px) {
-
-        .carousel-control .glyphicon-chevron-left,
-        .carousel-control .glyphicon-chevron-right,
-        .carousel-control .icon-prev,
-        .carousel-control .icon-next {
-            margin-top: -15px !important;
-        }
-
-        .carousel-control .glyphicon-chevron-left,
-        .carousel-control .icon-prev {
-            margin-left: -15px !important;
-        }
-
-        .carousel-control .glyphicon-chevron-right,
-        .carousel-control .icon-next {
-            margin-right: -15px !important;
-        }
-    }
-
+    
     @media (max-width: 991px) {
-        .col-xs-4 {
-            width: 33.33333333%;
-            float: left;
+        .no-padding-sm {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        .no-margin-sm {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        .nav-tabs {
+            margin-top: 0px;
+            max-width: 100%;
+            overflow-x: scroll;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+        .nav-tabs li {
+            font-size: 14px;
+        }
+        .nav-tabs.nav-justified-sm li {
+            width: 40%;
+            float: none;
+            display: inline-block;
+            text-align: center
+        }
+        .nav-tabs.nav-justified-sm li a {
+            margin-right: 0px;
         }
     }
 </style>
-<div class="row m-0">
-    <div class="col-xs-12 plr-0 pb-5">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner" role="listbox">
-
-                    <div class="item active"><a
-
-                        href="https://www.alfacart.com/promo/unileverpayday" target="_blank"
-                        mobile-link="alfacart://catalog/12602"><img class="img img-responsive "
-
-                            src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/2019/ADER-5351-Mobile-SIS.png">
-                    </a></div>
-                <div class="item "><a
-                        href="https://www.alfacart.com/promo/unilever-tebus-murah" target="_blank"
-                        mobile-link="alfacart://catalog/11090"><img class="img img-responsive "
-                         
-                            src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/2019/SIS-PC-TB-OKT.png">
-                    </a></div>
-                <div class="item"><a data-cke-saved-href="https://www.alfacart.com/promo/unilever-diskon"
-                        href="https://www.alfacart.com/promo/unilever-diskon" target="_blank"
-                        mobile-link="alfacart://catalog/12568"><img class="img img-responsive "
-                            data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/2019/SIS-ULI-OKTP2.png"
-                            src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/2019/SIS-ULI-OKTP2.png">
-                    </a></div>
-            </div><a class="left carousel-control" data-cke-saved-href="#carousel-example-generic"
-                href="#carousel-example-generic" data-slide="prev"><span
-                    class="glyphicon glyphicon-chevron-left p1">&nbsp;</span> </a> <a class="right carousel-control"
-                data-cke-saved-href="#carousel-example-generic" href="#carousel-example-generic" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right p1">&nbsp;</span> </a>
+<div class="row no-margin ">
+    <div class="col-sm-12 no-padding-sm mb-10"><img data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/mei/PARTNER-DEALS-HEADER-ADER4248.jpg" src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/mei/PARTNER-DEALS-HEADER-ADER4248.jpg" class="btn-block"></div>
+</div>
+<div class="row no-margin">
+    <div class="col-sm-12 no-padding-sm">
+        <div class="row no-margin-sm ">
+            <div class="col-sm-12">
+                <h3>Partner Deals</h3>
+            </div>
         </div>
     </div>
-</div>
-<div class="row m-0">
-    <div class="col-xs-6 plr-5"><a data-cke-saved-href="https://www.alfacart.com/promo/promo-langganan-unilever"
-            href="https://www.alfacart.com/promo/promo-langganan-unilever" mobile-link="alfacart://catalog/10216"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-1-REV.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-1-REV.png"
-                class="btn-block"> </a></div>
-    <div class="col-xs-6 plr-5"><a data-cke-saved-href="https://www.alfacart.com/promo/unilever-bulanan"
-            href="https://www.alfacart.com/promo/unilever-bulanan" mobile-link="alfacart://catalog/11328"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-2.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-2.png"
-                class="btn-block"> </a></div>
-</div>
-<h4 class="text-center">SHOP MORE</h4>
-<div class="row m-0">
-    <div class="col-xs-3 plr-5"><a data-cke-saved-href="https://www.alfacart.com/promo/unilever-home-cleaning"
-            href="https://www.alfacart.com/promo/unilever-home-cleaning" mobile-link="alfacart://catalog/10149"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-3-HC.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-3-HC.png"
-                class="btn-block"> </a></div>
-    <div class="col-xs-3 plr-5"><a data-cke-saved-href="https://www.alfacart.com/promo/unilever-personal-care"
-            href="https://www.alfacart.com/promo/unilever-personal-care" mobile-link="alfacart://catalog/10148"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-4-PC.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-4-PC.png"
-                class="btn-block"> </a></div>
-    <div class="col-xs-3 plr-5"><a data-cke-saved-href="https://www.alfacart.com/promo/unilever-baby-care"
-            href="https://www.alfacart.com/promo/unilever-baby-care" mobile-link="alfacart://catalog/10147"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-5-BK.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-5-BK.png"
-                class="btn-block"> </a></div>
-    <div class="col-xs-3 plr-5"><a data-cke-saved-href="https://www.alfacart.com/promo/unilever-food-and-drinks"
-            href="https://www.alfacart.com/promo/unilever-food-and-drinks" mobile-link="alfacart://catalog/10146"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-6-FB.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/Oktober/ADER5162-BRACKET-6-FB.png"
-                class="btn-block"> </a></div>
-</div>
-<div class="row m-0">
-    <h4 class="text-center">SHOP BY BRAND</h4>
-    <div class="col-xs-12 plr-0">
-        <table class="btn-block bg-grey cke_show_border">
-            <tbody>
-                <tr>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/BANGO"
-                            href="https://www.alfacart.com/brands/BANGO"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Bango.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Bango.png"
-                                class="img-responsive"> </a></td>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/Royco"
-                            href="https://www.alfacart.com/brands/Royco"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Royco.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Royco.png"
-                                class="img-responsive"> </a></td>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/SariWangi"
-                            href="https://www.alfacart.com/brands/SariWangi"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Sariwangi.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Sariwangi.png"
-                                class="img-responsive"> </a></td>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/Sunlight"
-                            href="https://www.alfacart.com/brands/Sunlight"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Sunlight.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Sunlight.png"
-                                class="img-responsive"> </a></td>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/Molto"
-                            href="https://www.alfacart.com/brands/Molto"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Molto.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Molto.png"
-                                class="img-responsive"> </a></td>
-                </tr>
-                <tr>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/Rinso"
-                            href="https://www.alfacart.com/brands/Rinso"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Rinso.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Rinso.png"
-                                class="img-responsive"> </a></td>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/Citra"
-                            href="https://www.alfacart.com/brands/Citra"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Citra.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Citra.png"
-                                class="img-responsive"> </a></td>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/Pepsodent"
-                            href="https://www.alfacart.com/brands/Pepsodent"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Pepsodent.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Pepsodent.png"
-                                class="img-responsive"> </a></td>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/Pond's"
-                            href="https://www.alfacart.com/brands/Pond's"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Ponds.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Ponds.png"
-                                class="img-responsive"> </a></td>
-                    <td><a data-cke-saved-href="https://www.alfacart.com/brands/CLEAR"
-                            href="https://www.alfacart.com/brands/CLEAR"><img
-                                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Clear.png"
-                                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/September/Brand-Clear.png"
-                                class="img-responsive"> </a></td>
-                </tr>
-            </tbody>
-        </table>
+</div>>
+<div class="row no-margin">
+    <div class="col-sm-12 no-padding-sm">
+        <ul class="nav nav-tabs nav-justified-sm">
+            <li class=""><a href="https://www.alfacart.com/promo/test-new-lp" mobile-link="alfacart://catalog/13368">Special Offer</a>
+            </li>
+            <li class=""><a href="https://www.alfacart.com/promo/categories" mobile-link="alfacart://catalog/13367">Promo by
+                        Categories</a></li>
+
+
+            <li class="active"><a href="https://www.alfacart.com/promo/partner-deals" mobile-link="alfacart://catalog/13193">Partner Deals</a></li>
+        </ul>
     </div>
-</div>
-<h4 class="text-center">WHAT'S NEW</h4>
-<div class="row m-0">
-    <div class="col-xs-12 plr-0"><iframe width="100%" height="180"
-            src="https://www.youtube.com/embed/iav4_qCsoJA?list=PLRB7xYcbk-PyoMjxAECYxqiL9Xha9Nkfs" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-    </div>
-</div>
-<h4 class="text-center">SUPER DEALS</h4>
-<div class="row m-0">
-    <div class="col-xs-6 no-padding"><a data-cke-saved-href="https://www.alfacart.com/promo/pesta-diskon-unilever-bango"
-            href="https://www.alfacart.com/promo/pesta-diskon-unilever-bango"
-            mobile-link="alfacart://catalog/10410"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/juli/2019/B5.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/juli/2019/B5.png"
-                class="img-responsive btn-block"> </a></div>
-    <div class="col-xs-6 no-padding "><a data-cke-saved-href="https://www.alfacart.com/promo/pepsodent"
-            href="https://www.alfacart.com/promo/pepsodent" mobile-link="alfacart://catalog/10587"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/juli/2019/B3.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/juli/2019/B3.png"
-                class="img-responsive btn-block"> </a></div>
-    <div class="col-xs-6 no-padding"><a data-cke-saved-href="https://www.alfacart.com/promo/unilever-sunlight"
-            href="https://www.alfacart.com/promo/unilever-sunlight" mobile-link="alfacart://catalog/10282"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/juli/2019/B6.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/juli/2019/B6.png"
-                class="img-responsive btn-block"> </a></div>
-    <div class="col-xs-6 no-padding"><a data-cke-saved-href="https://www.alfacart.com/promo/rexona"
-            href="https://www.alfacart.com/promo/rexona" mobile-link="alfacart://catalog/10575"><img
-                data-cke-saved-src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/juli/2019/B11.png"
-                src="https://cs1.alfacart.com/media/wysiwyg/Marketing-Campaign/juli/2019/B11.png"
-                class="img-responsive btn-block"> </a></div>
 </div>
